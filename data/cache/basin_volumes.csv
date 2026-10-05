@@ -1,0 +1,1093 @@
+REF_DATE,DR_Name,Month,UOM,SCALAR_FACTOR,VALUE,STATUS
+2013,Pacific Coast,"Total volume, all months",Cubic metres,millions,124.9,A
+2013,Pacific Coast,January,Cubic metres,millions,11.9,C
+2013,Pacific Coast,February,Cubic metres,millions,10,C
+2013,Pacific Coast,March,Cubic metres,millions,13.1,C
+2013,Pacific Coast,April,Cubic metres,millions,11.1,C
+2013,Pacific Coast,May,Cubic metres,millions,9.7,C
+2013,Pacific Coast,June,Cubic metres,millions,9.1,C
+2013,Pacific Coast,July,Cubic metres,millions,9,C
+2013,Pacific Coast,August,Cubic metres,millions,8.8,C
+2013,Pacific Coast,September,Cubic metres,millions,9.8,C
+2013,Pacific Coast,October,Cubic metres,millions,10.5,C
+2013,Pacific Coast,November,Cubic metres,millions,11.1,C
+2013,Pacific Coast,December,Cubic metres,millions,10.8,C
+2013,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,439.4,A
+2013,Fraser Lower Mainland,January,Cubic metres,millions,41.4,A
+2013,Fraser Lower Mainland,February,Cubic metres,millions,34.9,A
+2013,Fraser Lower Mainland,March,Cubic metres,millions,45.8,A
+2013,Fraser Lower Mainland,April,Cubic metres,millions,40.3,A
+2013,Fraser Lower Mainland,May,Cubic metres,millions,35.1,A
+2013,Fraser Lower Mainland,June,Cubic metres,millions,33.4,A
+2013,Fraser Lower Mainland,July,Cubic metres,millions,32,A
+2013,Fraser Lower Mainland,August,Cubic metres,millions,31.5,A
+2013,Fraser Lower Mainland,September,Cubic metres,millions,34.6,A
+2013,Fraser Lower Mainland,October,Cubic metres,millions,34.1,A
+2013,Fraser Lower Mainland,November,Cubic metres,millions,38,A
+2013,Fraser Lower Mainland,December,Cubic metres,millions,38.4,A
+2013,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,31.6,C
+2013,Okanagan Similkameen,January,Cubic metres,millions,2.6,C
+2013,Okanagan Similkameen,February,Cubic metres,millions,2.3,C
+2013,Okanagan Similkameen,March,Cubic metres,millions,2.8,E
+2013,Okanagan Similkameen,April,Cubic metres,millions,2.9,E
+2013,Okanagan Similkameen,May,Cubic metres,millions,2.6,C
+2013,Okanagan Similkameen,June,Cubic metres,millions,2.7,C
+2013,Okanagan Similkameen,July,Cubic metres,millions,2.7,C
+2013,Okanagan Similkameen,August,Cubic metres,millions,2.6,C
+2013,Okanagan Similkameen,September,Cubic metres,millions,2.6,C
+2013,Okanagan Similkameen,October,Cubic metres,millions,2.6,C
+2013,Okanagan Similkameen,November,Cubic metres,millions,2.6,E
+2013,Okanagan Similkameen,December,Cubic metres,millions,2.5,C
+2013,Columbia,"Total volume, all months",Cubic metres,millions,13.2,A
+2013,Columbia,January,Cubic metres,millions,1.1,E
+2013,Columbia,February,Cubic metres,millions,0.9,E
+2013,Columbia,March,Cubic metres,millions,1.2,E
+2013,Columbia,April,Cubic metres,millions,1.4,E
+2013,Columbia,May,Cubic metres,millions,1.2,E
+2013,Columbia,June,Cubic metres,millions,1.2,E
+2013,Columbia,July,Cubic metres,millions,1.1,E
+2013,Columbia,August,Cubic metres,millions,1,E
+2013,Columbia,September,Cubic metres,millions,1.1,E
+2013,Columbia,October,Cubic metres,millions,0.9,E
+2013,Columbia,November,Cubic metres,millions,1,E
+2013,Columbia,December,Cubic metres,millions,1,E
+2013,Yukon,"Total volume, all months",Cubic metres,millions,4.9,A
+2013,Yukon,January,Cubic metres,millions,0.4,E
+2013,Yukon,February,Cubic metres,millions,0.4,E
+2013,Yukon,March,Cubic metres,millions,0.5,E
+2013,Yukon,April,Cubic metres,millions,0.5,E
+2013,Yukon,May,Cubic metres,millions,0.4,E
+2013,Yukon,June,Cubic metres,millions,0.4,E
+2013,Yukon,July,Cubic metres,millions,0.4,E
+2013,Yukon,August,Cubic metres,millions,0.3,E
+2013,Yukon,September,Cubic metres,millions,0.4,E
+2013,Yukon,October,Cubic metres,millions,0.4,E
+2013,Yukon,November,Cubic metres,millions,0.4,E
+2013,Yukon,December,Cubic metres,millions,0.4,E
+2013,Peace Athabasca,"Total volume, all months",Cubic metres,millions,42.1,B
+2013,Peace Athabasca,January,Cubic metres,millions,3.5,E
+2013,Peace Athabasca,February,Cubic metres,millions,3.1,C
+2013,Peace Athabasca,March,Cubic metres,millions,3.7,E
+2013,Peace Athabasca,April,Cubic metres,millions,3.9,E
+2013,Peace Athabasca,May,Cubic metres,millions,3.8,E
+2013,Peace Athabasca,June,Cubic metres,millions,4.3,C
+2013,Peace Athabasca,July,Cubic metres,millions,3.6,E
+2013,Peace Athabasca,August,Cubic metres,millions,3.4,C
+2013,Peace Athabasca,September,Cubic metres,millions,3.3,C
+2013,Peace Athabasca,October,Cubic metres,millions,2.7,E
+2013,Peace Athabasca,November,Cubic metres,millions,3.4,C
+2013,Peace Athabasca,December,Cubic metres,millions,3.3,C
+2013,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.5,B
+2013,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,April,Cubic metres,millions,0.2,E
+2013,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2013,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2014,Pacific Coast,"Total volume, all months",Cubic metres,millions,129.8,A
+2014,Pacific Coast,January,Cubic metres,millions,12.3,C
+2014,Pacific Coast,February,Cubic metres,millions,11.5,C
+2014,Pacific Coast,March,Cubic metres,millions,13.6,C
+2014,Pacific Coast,April,Cubic metres,millions,11,C
+2014,Pacific Coast,May,Cubic metres,millions,9.8,C
+2014,Pacific Coast,June,Cubic metres,millions,8.6,C
+2014,Pacific Coast,July,Cubic metres,millions,8.7,C
+2014,Pacific Coast,August,Cubic metres,millions,8.5,C
+2014,Pacific Coast,September,Cubic metres,millions,8.7,C
+2014,Pacific Coast,October,Cubic metres,millions,11.2,C
+2014,Pacific Coast,November,Cubic metres,millions,12.7,C
+2014,Pacific Coast,December,Cubic metres,millions,13.1,C
+2014,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,463.9,A
+2014,Fraser Lower Mainland,January,Cubic metres,millions,42.9,A
+2014,Fraser Lower Mainland,February,Cubic metres,millions,38.7,A
+2014,Fraser Lower Mainland,March,Cubic metres,millions,48.9,A
+2014,Fraser Lower Mainland,April,Cubic metres,millions,39,A
+2014,Fraser Lower Mainland,May,Cubic metres,millions,37.2,A
+2014,Fraser Lower Mainland,June,Cubic metres,millions,32.2,A
+2014,Fraser Lower Mainland,July,Cubic metres,millions,31.4,A
+2014,Fraser Lower Mainland,August,Cubic metres,millions,29.5,A
+2014,Fraser Lower Mainland,September,Cubic metres,millions,31.2,A
+2014,Fraser Lower Mainland,October,Cubic metres,millions,40.7,A
+2014,Fraser Lower Mainland,November,Cubic metres,millions,46.7,A
+2014,Fraser Lower Mainland,December,Cubic metres,millions,45.4,A
+2014,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,31.7,C
+2014,Okanagan Similkameen,January,Cubic metres,millions,2.7,E
+2014,Okanagan Similkameen,February,Cubic metres,millions,2.2,C
+2014,Okanagan Similkameen,March,Cubic metres,millions,2.6,C
+2014,Okanagan Similkameen,April,Cubic metres,millions,3.1,E
+2014,Okanagan Similkameen,May,Cubic metres,millions,2.8,E
+2014,Okanagan Similkameen,June,Cubic metres,millions,2.5,C
+2014,Okanagan Similkameen,July,Cubic metres,millions,2.6,C
+2014,Okanagan Similkameen,August,Cubic metres,millions,2.7,C
+2014,Okanagan Similkameen,September,Cubic metres,millions,2.6,C
+2014,Okanagan Similkameen,October,Cubic metres,millions,2.6,C
+2014,Okanagan Similkameen,November,Cubic metres,millions,2.5,C
+2014,Okanagan Similkameen,December,Cubic metres,millions,2.7,E
+2014,Columbia,"Total volume, all months",Cubic metres,millions,12.6,A
+2014,Columbia,January,Cubic metres,millions,1,E
+2014,Columbia,February,Cubic metres,millions,0.9,E
+2014,Columbia,March,Cubic metres,millions,1.1,E
+2014,Columbia,April,Cubic metres,millions,1.4,E
+2014,Columbia,May,Cubic metres,millions,1.3,E
+2014,Columbia,June,Cubic metres,millions,1.1,E
+2014,Columbia,July,Cubic metres,millions,1,E
+2014,Columbia,August,Cubic metres,millions,1,E
+2014,Columbia,September,Cubic metres,millions,1,E
+2014,Columbia,October,Cubic metres,millions,0.9,E
+2014,Columbia,November,Cubic metres,millions,1,E
+2014,Columbia,December,Cubic metres,millions,1,E
+2014,Yukon,"Total volume, all months",Cubic metres,millions,4.8,A
+2014,Yukon,January,Cubic metres,millions,0.4,E
+2014,Yukon,February,Cubic metres,millions,0.3,E
+2014,Yukon,March,Cubic metres,millions,0.4,E
+2014,Yukon,April,Cubic metres,millions,0.6,E
+2014,Yukon,May,Cubic metres,millions,0.5,E
+2014,Yukon,June,Cubic metres,millions,0.4,E
+2014,Yukon,July,Cubic metres,millions,0.4,E
+2014,Yukon,August,Cubic metres,millions,0.4,E
+2014,Yukon,September,Cubic metres,millions,0.4,E
+2014,Yukon,October,Cubic metres,millions,0.4,E
+2014,Yukon,November,Cubic metres,millions,0.4,E
+2014,Yukon,December,Cubic metres,millions,0.4,E
+2014,Peace Athabasca,"Total volume, all months",Cubic metres,millions,44.4,B
+2014,Peace Athabasca,January,Cubic metres,millions,3.4,E
+2014,Peace Athabasca,February,Cubic metres,millions,3.4,C
+2014,Peace Athabasca,March,Cubic metres,millions,3.7,E
+2014,Peace Athabasca,April,Cubic metres,millions,4.4,E
+2014,Peace Athabasca,May,Cubic metres,millions,4.4,E
+2014,Peace Athabasca,June,Cubic metres,millions,4.1,E
+2014,Peace Athabasca,July,Cubic metres,millions,3.5,C
+2014,Peace Athabasca,August,Cubic metres,millions,3.3,E
+2014,Peace Athabasca,September,Cubic metres,millions,3.4,C
+2014,Peace Athabasca,October,Cubic metres,millions,3.6,C
+2014,Peace Athabasca,November,Cubic metres,millions,3.6,C
+2014,Peace Athabasca,December,Cubic metres,millions,3.6,E
+2014,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.4,B
+2014,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,April,Cubic metres,millions,0.2,E
+2014,Lower Mackenzie,May,Cubic metres,millions,0.2,E
+2014,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2014,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2015,Pacific Coast,"Total volume, all months",Cubic metres,millions,128.1,A
+2015,Pacific Coast,January,Cubic metres,millions,12.9,C
+2015,Pacific Coast,February,Cubic metres,millions,10.9,B
+2015,Pacific Coast,March,Cubic metres,millions,12.4,C
+2015,Pacific Coast,April,Cubic metres,millions,10.4,C
+2015,Pacific Coast,May,Cubic metres,millions,8.8,C
+2015,Pacific Coast,June,Cubic metres,millions,8.3,C
+2015,Pacific Coast,July,Cubic metres,millions,8.6,C
+2015,Pacific Coast,August,Cubic metres,millions,8.6,C
+2015,Pacific Coast,September,Cubic metres,millions,9,C
+2015,Pacific Coast,October,Cubic metres,millions,10,C
+2015,Pacific Coast,November,Cubic metres,millions,13.1,B
+2015,Pacific Coast,December,Cubic metres,millions,15.1,B
+2015,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,438.2,A
+2015,Fraser Lower Mainland,January,Cubic metres,millions,44,A
+2015,Fraser Lower Mainland,February,Cubic metres,millions,38.3,A
+2015,Fraser Lower Mainland,March,Cubic metres,millions,42.1,A
+2015,Fraser Lower Mainland,April,Cubic metres,millions,34.2,A
+2015,Fraser Lower Mainland,May,Cubic metres,millions,31.3,A
+2015,Fraser Lower Mainland,June,Cubic metres,millions,29.8,A
+2015,Fraser Lower Mainland,July,Cubic metres,millions,30.6,A
+2015,Fraser Lower Mainland,August,Cubic metres,millions,30.7,A
+2015,Fraser Lower Mainland,September,Cubic metres,millions,31.4,A
+2015,Fraser Lower Mainland,October,Cubic metres,millions,33.7,A
+2015,Fraser Lower Mainland,November,Cubic metres,millions,42.8,A
+2015,Fraser Lower Mainland,December,Cubic metres,millions,49.1,A
+2015,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,31.1,C
+2015,Okanagan Similkameen,January,Cubic metres,millions,2.6,C
+2015,Okanagan Similkameen,February,Cubic metres,millions,2.2,C
+2015,Okanagan Similkameen,March,Cubic metres,millions,2.7,C
+2015,Okanagan Similkameen,April,Cubic metres,millions,3,E
+2015,Okanagan Similkameen,May,Cubic metres,millions,2.6,C
+2015,Okanagan Similkameen,June,Cubic metres,millions,2.6,C
+2015,Okanagan Similkameen,July,Cubic metres,millions,2.6,C
+2015,Okanagan Similkameen,August,Cubic metres,millions,2.6,C
+2015,Okanagan Similkameen,September,Cubic metres,millions,2.5,C
+2015,Okanagan Similkameen,October,Cubic metres,millions,2.6,C
+2015,Okanagan Similkameen,November,Cubic metres,millions,2.5,C
+2015,Okanagan Similkameen,December,Cubic metres,millions,2.7,C
+2015,Columbia,"Total volume, all months",Cubic metres,millions,11.3,A
+2015,Columbia,January,Cubic metres,millions,1.1,E
+2015,Columbia,February,Cubic metres,millions,1,E
+2015,Columbia,March,Cubic metres,millions,1.1,E
+2015,Columbia,April,Cubic metres,millions,1.1,E
+2015,Columbia,May,Cubic metres,millions,0.9,E
+2015,Columbia,June,Cubic metres,millions,0.8,E
+2015,Columbia,July,Cubic metres,millions,0.9,E
+2015,Columbia,August,Cubic metres,millions,0.9,E
+2015,Columbia,September,Cubic metres,millions,0.9,E
+2015,Columbia,October,Cubic metres,millions,0.8,E
+2015,Columbia,November,Cubic metres,millions,0.9,E
+2015,Columbia,December,Cubic metres,millions,1,E
+2015,Yukon,"Total volume, all months",Cubic metres,millions,4.1,E
+2015,Yukon,January,Cubic metres,millions,0.1,E
+2015,Yukon,February,Cubic metres,millions,0.1,E
+2015,Yukon,March,Cubic metres,millions,0.1,E
+2015,Yukon,April,Cubic metres,millions,0.1,E
+2015,Yukon,May,Cubic metres,millions,0.1,E
+2015,Yukon,June,Cubic metres,millions,0.1,E
+2015,Yukon,July,Cubic metres,millions,0.1,E
+2015,Yukon,August,Cubic metres,millions,0.1,E
+2015,Yukon,September,Cubic metres,millions,1,E
+2015,Yukon,October,Cubic metres,millions,1.8,E
+2015,Yukon,November,Cubic metres,millions,0.5,E
+2015,Yukon,December,Cubic metres,millions,0.1,E
+2015,Peace Athabasca,"Total volume, all months",Cubic metres,millions,43,B
+2015,Peace Athabasca,January,Cubic metres,millions,3.6,C
+2015,Peace Athabasca,February,Cubic metres,millions,3.2,C
+2015,Peace Athabasca,March,Cubic metres,millions,3.9,C
+2015,Peace Athabasca,April,Cubic metres,millions,4.9,C
+2015,Peace Athabasca,May,Cubic metres,millions,3.8,E
+2015,Peace Athabasca,June,Cubic metres,millions,3.7,E
+2015,Peace Athabasca,July,Cubic metres,millions,3.6,E
+2015,Peace Athabasca,August,Cubic metres,millions,3.5,E
+2015,Peace Athabasca,September,Cubic metres,millions,3.5,E
+2015,Peace Athabasca,October,Cubic metres,millions,3.2,E
+2015,Peace Athabasca,November,Cubic metres,millions,3,E
+2015,Peace Athabasca,December,Cubic metres,millions,3.1,E
+2015,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.3,B
+2015,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,April,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2015,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2016,Pacific Coast,"Total volume, all months",Cubic metres,millions,135.3,A
+2016,Pacific Coast,January,Cubic metres,millions,13,C
+2016,Pacific Coast,February,Cubic metres,millions,13.3,C
+2016,Pacific Coast,March,Cubic metres,millions,14.1,C
+2016,Pacific Coast,April,Cubic metres,millions,10,C
+2016,Pacific Coast,May,Cubic metres,millions,9,C
+2016,Pacific Coast,June,Cubic metres,millions,8.8,C
+2016,Pacific Coast,July,Cubic metres,millions,9,C
+2016,Pacific Coast,August,Cubic metres,millions,8.8,C
+2016,Pacific Coast,September,Cubic metres,millions,9,C
+2016,Pacific Coast,October,Cubic metres,millions,12.1,C
+2016,Pacific Coast,November,Cubic metres,millions,13.3,C
+2016,Pacific Coast,December,Cubic metres,millions,14.8,C
+2016,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,460.5,A
+2016,Fraser Lower Mainland,January,Cubic metres,millions,44,A
+2016,Fraser Lower Mainland,February,Cubic metres,millions,43.3,A
+2016,Fraser Lower Mainland,March,Cubic metres,millions,43.8,A
+2016,Fraser Lower Mainland,April,Cubic metres,millions,30.8,A
+2016,Fraser Lower Mainland,May,Cubic metres,millions,31,A
+2016,Fraser Lower Mainland,June,Cubic metres,millions,31.7,A
+2016,Fraser Lower Mainland,July,Cubic metres,millions,31.5,A
+2016,Fraser Lower Mainland,August,Cubic metres,millions,30,A
+2016,Fraser Lower Mainland,September,Cubic metres,millions,31.4,A
+2016,Fraser Lower Mainland,October,Cubic metres,millions,43.1,A
+2016,Fraser Lower Mainland,November,Cubic metres,millions,50.1,A
+2016,Fraser Lower Mainland,December,Cubic metres,millions,49.6,A
+2016,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,30.4,C
+2016,Okanagan Similkameen,January,Cubic metres,millions,2.6,C
+2016,Okanagan Similkameen,February,Cubic metres,millions,2.6,C
+2016,Okanagan Similkameen,March,Cubic metres,millions,3.2,C
+2016,Okanagan Similkameen,April,Cubic metres,millions,2.6,C
+2016,Okanagan Similkameen,May,Cubic metres,millions,2.3,C
+2016,Okanagan Similkameen,June,Cubic metres,millions,2.2,C
+2016,Okanagan Similkameen,July,Cubic metres,millions,2.6,C
+2016,Okanagan Similkameen,August,Cubic metres,millions,2.6,C
+2016,Okanagan Similkameen,September,Cubic metres,millions,2.5,C
+2016,Okanagan Similkameen,October,Cubic metres,millions,2.5,C
+2016,Okanagan Similkameen,November,Cubic metres,millions,2.4,C
+2016,Okanagan Similkameen,December,Cubic metres,millions,2.5,C
+2016,Columbia,"Total volume, all months",Cubic metres,millions,11.6,A
+2016,Columbia,January,Cubic metres,millions,0.9,E
+2016,Columbia,February,Cubic metres,millions,0.9,E
+2016,Columbia,March,Cubic metres,millions,1,E
+2016,Columbia,April,Cubic metres,millions,1.1,E
+2016,Columbia,May,Cubic metres,millions,1,E
+2016,Columbia,June,Cubic metres,millions,1,E
+2016,Columbia,July,Cubic metres,millions,0.9,E
+2016,Columbia,August,Cubic metres,millions,0.9,E
+2016,Columbia,September,Cubic metres,millions,0.9,E
+2016,Columbia,October,Cubic metres,millions,1,E
+2016,Columbia,November,Cubic metres,millions,1,E
+2016,Columbia,December,Cubic metres,millions,1,E
+2016,Yukon,"Total volume, all months",Cubic metres,millions,4.1,A
+2016,Yukon,January,Cubic metres,millions,0.1,A
+2016,Yukon,February,Cubic metres,millions,0.1,A
+2016,Yukon,March,Cubic metres,millions,0.1,A
+2016,Yukon,April,Cubic metres,millions,0.1,A
+2016,Yukon,May,Cubic metres,millions,0.1,A
+2016,Yukon,June,Cubic metres,millions,0.1,A
+2016,Yukon,July,Cubic metres,millions,0.1,A
+2016,Yukon,August,Cubic metres,millions,0.1,A
+2016,Yukon,September,Cubic metres,millions,1,A
+2016,Yukon,October,Cubic metres,millions,1.8,A
+2016,Yukon,November,Cubic metres,millions,0.5,A
+2016,Yukon,December,Cubic metres,millions,0.1,A
+2016,Peace Athabasca,"Total volume, all months",Cubic metres,millions,38.9,B
+2016,Peace Athabasca,January,Cubic metres,millions,3.1,E
+2016,Peace Athabasca,February,Cubic metres,millions,3,E
+2016,Peace Athabasca,March,Cubic metres,millions,3.4,E
+2016,Peace Athabasca,April,Cubic metres,millions,3.5,E
+2016,Peace Athabasca,May,Cubic metres,millions,3.2,E
+2016,Peace Athabasca,June,Cubic metres,millions,3.3,E
+2016,Peace Athabasca,July,Cubic metres,millions,3.3,C
+2016,Peace Athabasca,August,Cubic metres,millions,3.4,C
+2016,Peace Athabasca,September,Cubic metres,millions,2.9,E
+2016,Peace Athabasca,October,Cubic metres,millions,3.4,C
+2016,Peace Athabasca,November,Cubic metres,millions,3.2,C
+2016,Peace Athabasca,December,Cubic metres,millions,3.3,C
+2016,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.4,B
+2016,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,April,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2016,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2017,Pacific Coast,"Total volume, all months",Cubic metres,millions,134.3,A
+2017,Pacific Coast,January,Cubic metres,millions,11.9,C
+2017,Pacific Coast,February,Cubic metres,millions,12.1,C
+2017,Pacific Coast,March,Cubic metres,millions,14.1,C
+2017,Pacific Coast,April,Cubic metres,millions,12.6,C
+2017,Pacific Coast,May,Cubic metres,millions,10.6,C
+2017,Pacific Coast,June,Cubic metres,millions,9.4,C
+2017,Pacific Coast,July,Cubic metres,millions,9,C
+2017,Pacific Coast,August,Cubic metres,millions,9.1,C
+2017,Pacific Coast,September,Cubic metres,millions,8.9,C
+2017,Pacific Coast,October,Cubic metres,millions,10.8,C
+2017,Pacific Coast,November,Cubic metres,millions,12.9,B
+2017,Pacific Coast,December,Cubic metres,millions,12.9,C
+2017,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,473.4,A
+2017,Fraser Lower Mainland,January,Cubic metres,millions,42.9,A
+2017,Fraser Lower Mainland,February,Cubic metres,millions,39.7,A
+2017,Fraser Lower Mainland,March,Cubic metres,millions,51.6,A
+2017,Fraser Lower Mainland,April,Cubic metres,millions,44.8,A
+2017,Fraser Lower Mainland,May,Cubic metres,millions,39.6,A
+2017,Fraser Lower Mainland,June,Cubic metres,millions,32.9,A
+2017,Fraser Lower Mainland,July,Cubic metres,millions,30.9,A
+2017,Fraser Lower Mainland,August,Cubic metres,millions,30.7,A
+2017,Fraser Lower Mainland,September,Cubic metres,millions,30.7,A
+2017,Fraser Lower Mainland,October,Cubic metres,millions,37.2,A
+2017,Fraser Lower Mainland,November,Cubic metres,millions,45.6,A
+2017,Fraser Lower Mainland,December,Cubic metres,millions,46.8,A
+2017,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,32,B
+2017,Okanagan Similkameen,January,Cubic metres,millions,2.6,C
+2017,Okanagan Similkameen,February,Cubic metres,millions,2.5,C
+2017,Okanagan Similkameen,March,Cubic metres,millions,3.1,E
+2017,Okanagan Similkameen,April,Cubic metres,millions,3,E
+2017,Okanagan Similkameen,May,Cubic metres,millions,2.7,C
+2017,Okanagan Similkameen,June,Cubic metres,millions,2.8,C
+2017,Okanagan Similkameen,July,Cubic metres,millions,2.7,C
+2017,Okanagan Similkameen,August,Cubic metres,millions,2.6,C
+2017,Okanagan Similkameen,September,Cubic metres,millions,2.5,C
+2017,Okanagan Similkameen,October,Cubic metres,millions,2.6,C
+2017,Okanagan Similkameen,November,Cubic metres,millions,2.5,C
+2017,Okanagan Similkameen,December,Cubic metres,millions,2.6,E
+2017,Columbia,"Total volume, all months",Cubic metres,millions,13.4,A
+2017,Columbia,January,Cubic metres,millions,1.2,E
+2017,Columbia,February,Cubic metres,millions,1.2,E
+2017,Columbia,March,Cubic metres,millions,1.3,E
+2017,Columbia,April,Cubic metres,millions,1.4,E
+2017,Columbia,May,Cubic metres,millions,1.2,E
+2017,Columbia,June,Cubic metres,millions,1.2,E
+2017,Columbia,July,Cubic metres,millions,1,E
+2017,Columbia,August,Cubic metres,millions,1,E
+2017,Columbia,September,Cubic metres,millions,1,E
+2017,Columbia,October,Cubic metres,millions,0.9,E
+2017,Columbia,November,Cubic metres,millions,0.9,E
+2017,Columbia,December,Cubic metres,millions,1,E
+2017,Yukon,"Total volume, all months",Cubic metres,millions,4.3,A
+2017,Yukon,January,Cubic metres,millions,0.1,A
+2017,Yukon,February,Cubic metres,millions,0.1,A
+2017,Yukon,March,Cubic metres,millions,0.1,A
+2017,Yukon,April,Cubic metres,millions,0.1,A
+2017,Yukon,May,Cubic metres,millions,0.1,A
+2017,Yukon,June,Cubic metres,millions,0.1,A
+2017,Yukon,July,Cubic metres,millions,0,A
+2017,Yukon,August,Cubic metres,millions,2,A
+2017,Yukon,September,Cubic metres,millions,0.8,A
+2017,Yukon,October,Cubic metres,millions,0.9,A
+2017,Yukon,November,Cubic metres,millions,0.1,A
+2017,Yukon,December,Cubic metres,millions,0.1,A
+2017,Peace Athabasca,"Total volume, all months",Cubic metres,millions,38,A
+2017,Peace Athabasca,January,Cubic metres,millions,3.1,C
+2017,Peace Athabasca,February,Cubic metres,millions,3,E
+2017,Peace Athabasca,March,Cubic metres,millions,3.4,C
+2017,Peace Athabasca,April,Cubic metres,millions,3.9,E
+2017,Peace Athabasca,May,Cubic metres,millions,3.6,E
+2017,Peace Athabasca,June,Cubic metres,millions,3.4,E
+2017,Peace Athabasca,July,Cubic metres,millions,3,E
+2017,Peace Athabasca,August,Cubic metres,millions,3,E
+2017,Peace Athabasca,September,Cubic metres,millions,2.7,E
+2017,Peace Athabasca,October,Cubic metres,millions,3,C
+2017,Peace Athabasca,November,Cubic metres,millions,2.9,C
+2017,Peace Athabasca,December,Cubic metres,millions,3,C
+2017,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.4,B
+2017,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,April,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2017,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2018,Pacific Coast,"Total volume, all months",Cubic metres,millions,128,A
+2018,Pacific Coast,January,Cubic metres,millions,15,B
+2018,Pacific Coast,February,Cubic metres,millions,11.4,C
+2018,Pacific Coast,March,Cubic metres,millions,11.1,C
+2018,Pacific Coast,April,Cubic metres,millions,11.4,C
+2018,Pacific Coast,May,Cubic metres,millions,8.9,C
+2018,Pacific Coast,June,Cubic metres,millions,8,C
+2018,Pacific Coast,July,Cubic metres,millions,8.3,C
+2018,Pacific Coast,August,Cubic metres,millions,8.4,C
+2018,Pacific Coast,September,Cubic metres,millions,9,C
+2018,Pacific Coast,October,Cubic metres,millions,9.9,C
+2018,Pacific Coast,November,Cubic metres,millions,12.5,C
+2018,Pacific Coast,December,Cubic metres,millions,14.2,B
+2018,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,476.5,A
+2018,Fraser Lower Mainland,January,Cubic metres,millions,55.4,A
+2018,Fraser Lower Mainland,February,Cubic metres,millions,42.1,A
+2018,Fraser Lower Mainland,March,Cubic metres,millions,42,A
+2018,Fraser Lower Mainland,April,Cubic metres,millions,44.3,A
+2018,Fraser Lower Mainland,May,Cubic metres,millions,31.7,A
+2018,Fraser Lower Mainland,June,Cubic metres,millions,30.8,A
+2018,Fraser Lower Mainland,July,Cubic metres,millions,31,A
+2018,Fraser Lower Mainland,August,Cubic metres,millions,30.2,A
+2018,Fraser Lower Mainland,September,Cubic metres,millions,34,A
+2018,Fraser Lower Mainland,October,Cubic metres,millions,35.6,A
+2018,Fraser Lower Mainland,November,Cubic metres,millions,47.6,A
+2018,Fraser Lower Mainland,December,Cubic metres,millions,51.8,A
+2018,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,32.5,C
+2018,Okanagan Similkameen,January,Cubic metres,millions,2.7,C
+2018,Okanagan Similkameen,February,Cubic metres,millions,2.5,E
+2018,Okanagan Similkameen,March,Cubic metres,millions,2.9,C
+2018,Okanagan Similkameen,April,Cubic metres,millions,3.2,E
+2018,Okanagan Similkameen,May,Cubic metres,millions,2.9,C
+2018,Okanagan Similkameen,June,Cubic metres,millions,2.5,C
+2018,Okanagan Similkameen,July,Cubic metres,millions,2.6,C
+2018,Okanagan Similkameen,August,Cubic metres,millions,2.6,C
+2018,Okanagan Similkameen,September,Cubic metres,millions,2.5,C
+2018,Okanagan Similkameen,October,Cubic metres,millions,2.6,C
+2018,Okanagan Similkameen,November,Cubic metres,millions,2.8,E
+2018,Okanagan Similkameen,December,Cubic metres,millions,2.7,E
+2018,Columbia,"Total volume, all months",Cubic metres,millions,12.3,A
+2018,Columbia,January,Cubic metres,millions,1.2,E
+2018,Columbia,February,Cubic metres,millions,1,E
+2018,Columbia,March,Cubic metres,millions,1,E
+2018,Columbia,April,Cubic metres,millions,1.5,E
+2018,Columbia,May,Cubic metres,millions,1.2,E
+2018,Columbia,June,Cubic metres,millions,1,E
+2018,Columbia,July,Cubic metres,millions,0.9,E
+2018,Columbia,August,Cubic metres,millions,0.9,E
+2018,Columbia,September,Cubic metres,millions,0.9,E
+2018,Columbia,October,Cubic metres,millions,0.8,E
+2018,Columbia,November,Cubic metres,millions,1,E
+2018,Columbia,December,Cubic metres,millions,1,E
+2018,Yukon,"Total volume, all months",Cubic metres,millions,4.7,A
+2018,Yukon,January,Cubic metres,millions,0.1,E
+2018,Yukon,February,Cubic metres,millions,0.1,E
+2018,Yukon,March,Cubic metres,millions,0.1,E
+2018,Yukon,April,Cubic metres,millions,0.1,E
+2018,Yukon,May,Cubic metres,millions,0.1,E
+2018,Yukon,June,Cubic metres,millions,0.1,E
+2018,Yukon,July,Cubic metres,millions,0,E
+2018,Yukon,August,Cubic metres,millions,2.2,E
+2018,Yukon,September,Cubic metres,millions,0.8,E
+2018,Yukon,October,Cubic metres,millions,1,E
+2018,Yukon,November,Cubic metres,millions,0.1,E
+2018,Yukon,December,Cubic metres,millions,0.1,E
+2018,Peace Athabasca,"Total volume, all months",Cubic metres,millions,38.1,A
+2018,Peace Athabasca,January,Cubic metres,millions,3.1,C
+2018,Peace Athabasca,February,Cubic metres,millions,2.8,C
+2018,Peace Athabasca,March,Cubic metres,millions,3.2,C
+2018,Peace Athabasca,April,Cubic metres,millions,3.8,E
+2018,Peace Athabasca,May,Cubic metres,millions,3.4,E
+2018,Peace Athabasca,June,Cubic metres,millions,3.2,C
+2018,Peace Athabasca,July,Cubic metres,millions,3.3,C
+2018,Peace Athabasca,August,Cubic metres,millions,3.1,C
+2018,Peace Athabasca,September,Cubic metres,millions,3.2,C
+2018,Peace Athabasca,October,Cubic metres,millions,3,C
+2018,Peace Athabasca,November,Cubic metres,millions,3,C
+2018,Peace Athabasca,December,Cubic metres,millions,3,C
+2018,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.3,B
+2018,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,April,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2018,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2019,Pacific Coast,"Total volume, all months",Cubic metres,millions,118.8,A
+2019,Pacific Coast,January,Cubic metres,millions,13.3,B
+2019,Pacific Coast,February,Cubic metres,millions,9.9,C
+2019,Pacific Coast,March,Cubic metres,millions,10.2,C
+2019,Pacific Coast,April,Cubic metres,millions,10.2,C
+2019,Pacific Coast,May,Cubic metres,millions,8.9,C
+2019,Pacific Coast,June,Cubic metres,millions,7.9,C
+2019,Pacific Coast,July,Cubic metres,millions,8.7,C
+2019,Pacific Coast,August,Cubic metres,millions,8.5,C
+2019,Pacific Coast,September,Cubic metres,millions,9.2,C
+2019,Pacific Coast,October,Cubic metres,millions,10.1,C
+2019,Pacific Coast,November,Cubic metres,millions,10.1,C
+2019,Pacific Coast,December,Cubic metres,millions,11.7,B
+2019,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,458.9,A
+2019,Fraser Lower Mainland,January,Cubic metres,millions,45.5,A
+2019,Fraser Lower Mainland,February,Cubic metres,millions,35.7,A
+2019,Fraser Lower Mainland,March,Cubic metres,millions,34.8,A
+2019,Fraser Lower Mainland,April,Cubic metres,millions,40.3,A
+2019,Fraser Lower Mainland,May,Cubic metres,millions,34.9,A
+2019,Fraser Lower Mainland,June,Cubic metres,millions,32.5,A
+2019,Fraser Lower Mainland,July,Cubic metres,millions,33.8,A
+2019,Fraser Lower Mainland,August,Cubic metres,millions,32.9,A
+2019,Fraser Lower Mainland,September,Cubic metres,millions,38.8,A
+2019,Fraser Lower Mainland,October,Cubic metres,millions,41.2,A
+2019,Fraser Lower Mainland,November,Cubic metres,millions,39.6,A
+2019,Fraser Lower Mainland,December,Cubic metres,millions,49,A
+2019,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,32.2,B
+2019,Okanagan Similkameen,January,Cubic metres,millions,2.6,C
+2019,Okanagan Similkameen,February,Cubic metres,millions,2.4,C
+2019,Okanagan Similkameen,March,Cubic metres,millions,2.8,E
+2019,Okanagan Similkameen,April,Cubic metres,millions,3.2,E
+2019,Okanagan Similkameen,May,Cubic metres,millions,2.9,E
+2019,Okanagan Similkameen,June,Cubic metres,millions,2.5,C
+2019,Okanagan Similkameen,July,Cubic metres,millions,2.6,C
+2019,Okanagan Similkameen,August,Cubic metres,millions,2.5,C
+2019,Okanagan Similkameen,September,Cubic metres,millions,2.5,C
+2019,Okanagan Similkameen,October,Cubic metres,millions,2.8,C
+2019,Okanagan Similkameen,November,Cubic metres,millions,2.7,E
+2019,Okanagan Similkameen,December,Cubic metres,millions,2.6,E
+2019,Columbia,"Total volume, all months",Cubic metres,millions,11.8,B
+2019,Columbia,January,Cubic metres,millions,1,E
+2019,Columbia,February,Cubic metres,millions,0.9,E
+2019,Columbia,March,Cubic metres,millions,1,E
+2019,Columbia,April,Cubic metres,millions,1.2,E
+2019,Columbia,May,Cubic metres,millions,1.1,E
+2019,Columbia,June,Cubic metres,millions,0.9,E
+2019,Columbia,July,Cubic metres,millions,0.9,E
+2019,Columbia,August,Cubic metres,millions,0.9,E
+2019,Columbia,September,Cubic metres,millions,1,E
+2019,Columbia,October,Cubic metres,millions,1,E
+2019,Columbia,November,Cubic metres,millions,1,E
+2019,Columbia,December,Cubic metres,millions,1,E
+2019,Yukon,"Total volume, all months",Cubic metres,millions,4.6,A
+2019,Yukon,January,Cubic metres,millions,0.4,E
+2019,Yukon,February,Cubic metres,millions,0.3,E
+2019,Yukon,March,Cubic metres,millions,0.4,E
+2019,Yukon,April,Cubic metres,millions,0.5,E
+2019,Yukon,May,Cubic metres,millions,0.4,E
+2019,Yukon,June,Cubic metres,millions,0.3,E
+2019,Yukon,July,Cubic metres,millions,0.3,E
+2019,Yukon,August,Cubic metres,millions,0.3,E
+2019,Yukon,September,Cubic metres,millions,0.3,E
+2019,Yukon,October,Cubic metres,millions,0.4,E
+2019,Yukon,November,Cubic metres,millions,0.4,E
+2019,Yukon,December,Cubic metres,millions,0.4,E
+2019,Peace Athabasca,"Total volume, all months",Cubic metres,millions,40,A
+2019,Peace Athabasca,January,Cubic metres,millions,3.1,C
+2019,Peace Athabasca,February,Cubic metres,millions,2.7,E
+2019,Peace Athabasca,March,Cubic metres,millions,3.4,C
+2019,Peace Athabasca,April,Cubic metres,millions,3.5,E
+2019,Peace Athabasca,May,Cubic metres,millions,3.5,E
+2019,Peace Athabasca,June,Cubic metres,millions,3.4,E
+2019,Peace Athabasca,July,Cubic metres,millions,3.6,C
+2019,Peace Athabasca,August,Cubic metres,millions,3.3,C
+2019,Peace Athabasca,September,Cubic metres,millions,3.2,E
+2019,Peace Athabasca,October,Cubic metres,millions,3.4,E
+2019,Peace Athabasca,November,Cubic metres,millions,3.5,C
+2019,Peace Athabasca,December,Cubic metres,millions,3.4,E
+2019,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.3,B
+2019,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,April,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2019,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2020,Pacific Coast,"Total volume, all months",Cubic metres,millions,120.5,A
+2020,Pacific Coast,January,Cubic metres,millions,16.5,C
+2020,Pacific Coast,February,Cubic metres,millions,12.1,C
+2020,Pacific Coast,March,Cubic metres,millions,11.3,C
+2020,Pacific Coast,April,Cubic metres,millions,9.6,C
+2020,Pacific Coast,May,Cubic metres,millions,8.9,C
+2020,Pacific Coast,June,Cubic metres,millions,8.4,C
+2020,Pacific Coast,July,Cubic metres,millions,8.8,C
+2020,Pacific Coast,August,Cubic metres,millions,8.7,C
+2020,Pacific Coast,September,Cubic metres,millions,7.7,C
+2020,Pacific Coast,October,Cubic metres,millions,8.9,C
+2020,Pacific Coast,November,Cubic metres,millions,9,C
+2020,Pacific Coast,December,Cubic metres,millions,10.7,C
+2020,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,477.6,A
+2020,Fraser Lower Mainland,January,Cubic metres,millions,60.8,A
+2020,Fraser Lower Mainland,February,Cubic metres,millions,43.8,A
+2020,Fraser Lower Mainland,March,Cubic metres,millions,38.2,A
+2020,Fraser Lower Mainland,April,Cubic metres,millions,32.2,A
+2020,Fraser Lower Mainland,May,Cubic metres,millions,34.2,A
+2020,Fraser Lower Mainland,June,Cubic metres,millions,32.9,A
+2020,Fraser Lower Mainland,July,Cubic metres,millions,31.9,A
+2020,Fraser Lower Mainland,August,Cubic metres,millions,31.7,A
+2020,Fraser Lower Mainland,September,Cubic metres,millions,32.6,A
+2020,Fraser Lower Mainland,October,Cubic metres,millions,38.3,A
+2020,Fraser Lower Mainland,November,Cubic metres,millions,46.9,A
+2020,Fraser Lower Mainland,December,Cubic metres,millions,54,A
+2020,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,31.2,B
+2020,Okanagan Similkameen,January,Cubic metres,millions,2.7,C
+2020,Okanagan Similkameen,February,Cubic metres,millions,2.3,C
+2020,Okanagan Similkameen,March,Cubic metres,millions,3.1,E
+2020,Okanagan Similkameen,April,Cubic metres,millions,3,E
+2020,Okanagan Similkameen,May,Cubic metres,millions,2.7,C
+2020,Okanagan Similkameen,June,Cubic metres,millions,2.5,C
+2020,Okanagan Similkameen,July,Cubic metres,millions,2.7,C
+2020,Okanagan Similkameen,August,Cubic metres,millions,2.7,C
+2020,Okanagan Similkameen,September,Cubic metres,millions,2.5,C
+2020,Okanagan Similkameen,October,Cubic metres,millions,2.4,C
+2020,Okanagan Similkameen,November,Cubic metres,millions,2.3,C
+2020,Okanagan Similkameen,December,Cubic metres,millions,2.4,C
+2020,Columbia,"Total volume, all months",Cubic metres,millions,12.7,B
+2020,Columbia,January,Cubic metres,millions,1.2,E
+2020,Columbia,February,Cubic metres,millions,0.9,E
+2020,Columbia,March,Cubic metres,millions,1.1,E
+2020,Columbia,April,Cubic metres,millions,1.3,E
+2020,Columbia,May,Cubic metres,millions,1.1,E
+2020,Columbia,June,Cubic metres,millions,1,E
+2020,Columbia,July,Cubic metres,millions,1,E
+2020,Columbia,August,Cubic metres,millions,1,E
+2020,Columbia,September,Cubic metres,millions,1,E
+2020,Columbia,October,Cubic metres,millions,0.9,E
+2020,Columbia,November,Cubic metres,millions,1,E
+2020,Columbia,December,Cubic metres,millions,1.1,E
+2020,Yukon,"Total volume, all months",Cubic metres,millions,4.2,A
+2020,Yukon,January,Cubic metres,millions,0.4,E
+2020,Yukon,February,Cubic metres,millions,0.3,E
+2020,Yukon,March,Cubic metres,millions,0.5,E
+2020,Yukon,April,Cubic metres,millions,0.5,E
+2020,Yukon,May,Cubic metres,millions,0.4,E
+2020,Yukon,June,Cubic metres,millions,0.3,E
+2020,Yukon,July,Cubic metres,millions,0.3,E
+2020,Yukon,August,Cubic metres,millions,0.3,E
+2020,Yukon,September,Cubic metres,millions,0.3,E
+2020,Yukon,October,Cubic metres,millions,0.3,E
+2020,Yukon,November,Cubic metres,millions,0.4,E
+2020,Yukon,December,Cubic metres,millions,0.4,E
+2020,Peace Athabasca,"Total volume, all months",Cubic metres,millions,41.2,A
+2020,Peace Athabasca,January,Cubic metres,millions,3.2,C
+2020,Peace Athabasca,February,Cubic metres,millions,2.9,C
+2020,Peace Athabasca,March,Cubic metres,millions,3.3,C
+2020,Peace Athabasca,April,Cubic metres,millions,4.3,C
+2020,Peace Athabasca,May,Cubic metres,millions,4,C
+2020,Peace Athabasca,June,Cubic metres,millions,3.9,C
+2020,Peace Athabasca,July,Cubic metres,millions,3.6,C
+2020,Peace Athabasca,August,Cubic metres,millions,3.3,C
+2020,Peace Athabasca,September,Cubic metres,millions,3.1,C
+2020,Peace Athabasca,October,Cubic metres,millions,3.2,C
+2020,Peace Athabasca,November,Cubic metres,millions,3,E
+2020,Peace Athabasca,December,Cubic metres,millions,3.2,C
+2020,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.5,A
+2020,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,April,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2020,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2021,Pacific Coast,"Total volume, all months",Cubic metres,millions,129.8,A
+2021,Pacific Coast,January,Cubic metres,millions,13.5,B
+2021,Pacific Coast,February,Cubic metres,millions,10.6,C
+2021,Pacific Coast,March,Cubic metres,millions,11.6,C
+2021,Pacific Coast,April,Cubic metres,millions,9.1,C
+2021,Pacific Coast,May,Cubic metres,millions,8.9,C
+2021,Pacific Coast,June,Cubic metres,millions,8.4,C
+2021,Pacific Coast,July,Cubic metres,millions,8.7,C
+2021,Pacific Coast,August,Cubic metres,millions,8.7,C
+2021,Pacific Coast,September,Cubic metres,millions,9.4,C
+2021,Pacific Coast,October,Cubic metres,millions,12,C
+2021,Pacific Coast,November,Cubic metres,millions,14.9,C
+2021,Pacific Coast,December,Cubic metres,millions,14,C
+2021,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,477.8,A
+2021,Fraser Lower Mainland,January,Cubic metres,millions,51.6,A
+2021,Fraser Lower Mainland,February,Cubic metres,millions,39.7,A
+2021,Fraser Lower Mainland,March,Cubic metres,millions,37.9,A
+2021,Fraser Lower Mainland,April,Cubic metres,millions,32.6,A
+2021,Fraser Lower Mainland,May,Cubic metres,millions,32.8,A
+2021,Fraser Lower Mainland,June,Cubic metres,millions,31.9,A
+2021,Fraser Lower Mainland,July,Cubic metres,millions,30.7,A
+2021,Fraser Lower Mainland,August,Cubic metres,millions,32,A
+2021,Fraser Lower Mainland,September,Cubic metres,millions,36.4,A
+2021,Fraser Lower Mainland,October,Cubic metres,millions,45.6,A
+2021,Fraser Lower Mainland,November,Cubic metres,millions,56.6,A
+2021,Fraser Lower Mainland,December,Cubic metres,millions,50.1,A
+2021,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,26.2,B
+2021,Okanagan Similkameen,January,Cubic metres,millions,2.2,C
+2021,Okanagan Similkameen,February,Cubic metres,millions,1.9,C
+2021,Okanagan Similkameen,March,Cubic metres,millions,2.5,C
+2021,Okanagan Similkameen,April,Cubic metres,millions,2.5,C
+2021,Okanagan Similkameen,May,Cubic metres,millions,2.3,C
+2021,Okanagan Similkameen,June,Cubic metres,millions,2.2,C
+2021,Okanagan Similkameen,July,Cubic metres,millions,2.3,C
+2021,Okanagan Similkameen,August,Cubic metres,millions,2.2,C
+2021,Okanagan Similkameen,September,Cubic metres,millions,2.2,C
+2021,Okanagan Similkameen,October,Cubic metres,millions,2,C
+2021,Okanagan Similkameen,November,Cubic metres,millions,2,C
+2021,Okanagan Similkameen,December,Cubic metres,millions,2.1,C
+2021,Columbia,"Total volume, all months",Cubic metres,millions,11.5,A
+2021,Columbia,January,Cubic metres,millions,1.1,E
+2021,Columbia,February,Cubic metres,millions,0.9,E
+2021,Columbia,March,Cubic metres,millions,1,E
+2021,Columbia,April,Cubic metres,millions,1.1,E
+2021,Columbia,May,Cubic metres,millions,1,E
+2021,Columbia,June,Cubic metres,millions,0.9,E
+2021,Columbia,July,Cubic metres,millions,0.9,E
+2021,Columbia,August,Cubic metres,millions,0.9,E
+2021,Columbia,September,Cubic metres,millions,0.9,E
+2021,Columbia,October,Cubic metres,millions,0.9,E
+2021,Columbia,November,Cubic metres,millions,1,E
+2021,Columbia,December,Cubic metres,millions,1,E
+2021,Yukon,"Total volume, all months",Cubic metres,millions,4.7,A
+2021,Yukon,January,Cubic metres,millions,0.1,A
+2021,Yukon,February,Cubic metres,millions,0.1,A
+2021,Yukon,March,Cubic metres,millions,0,A
+2021,Yukon,April,Cubic metres,millions,0.1,A
+2021,Yukon,May,Cubic metres,millions,0.1,A
+2021,Yukon,June,Cubic metres,millions,0.1,A
+2021,Yukon,July,Cubic metres,millions,0.1,A
+2021,Yukon,August,Cubic metres,millions,1.2,A
+2021,Yukon,September,Cubic metres,millions,1.8,A
+2021,Yukon,October,Cubic metres,millions,1.1,A
+2021,Yukon,November,Cubic metres,millions,0,A
+2021,Yukon,December,Cubic metres,millions,0.1,A
+2021,Peace Athabasca,"Total volume, all months",Cubic metres,millions,35.4,A
+2021,Peace Athabasca,January,Cubic metres,millions,2.9,C
+2021,Peace Athabasca,February,Cubic metres,millions,2.6,C
+2021,Peace Athabasca,March,Cubic metres,millions,3.2,C
+2021,Peace Athabasca,April,Cubic metres,millions,3.1,C
+2021,Peace Athabasca,May,Cubic metres,millions,3.3,C
+2021,Peace Athabasca,June,Cubic metres,millions,3,C
+2021,Peace Athabasca,July,Cubic metres,millions,2.9,E
+2021,Peace Athabasca,August,Cubic metres,millions,2.8,C
+2021,Peace Athabasca,September,Cubic metres,millions,2.9,C
+2021,Peace Athabasca,October,Cubic metres,millions,2.9,C
+2021,Peace Athabasca,November,Cubic metres,millions,2.9,C
+2021,Peace Athabasca,December,Cubic metres,millions,3,C
+2021,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.5,A
+2021,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2021,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2021,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2021,Lower Mackenzie,April,Cubic metres,millions,0.2,E
+2021,Lower Mackenzie,May,Cubic metres,millions,0.2,E
+2021,Lower Mackenzie,June,Cubic metres,millions,0.2,E
+2021,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2021,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2021,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2021,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2021,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2021,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2022,Pacific Coast,"Total volume, all months",Cubic metres,millions,123,A
+2022,Pacific Coast,January,Cubic metres,millions,13.2,C
+2022,Pacific Coast,February,Cubic metres,millions,9.7,C
+2022,Pacific Coast,March,Cubic metres,millions,12.4,C
+2022,Pacific Coast,April,Cubic metres,millions,11.2,C
+2022,Pacific Coast,May,Cubic metres,millions,9.9,C
+2022,Pacific Coast,June,Cubic metres,millions,9.4,C
+2022,Pacific Coast,July,Cubic metres,millions,8.6,C
+2022,Pacific Coast,August,Cubic metres,millions,8.6,C
+2022,Pacific Coast,September,Cubic metres,millions,8.6,C
+2022,Pacific Coast,October,Cubic metres,millions,9.1,C
+2022,Pacific Coast,November,Cubic metres,millions,10.2,C
+2022,Pacific Coast,December,Cubic metres,millions,12,C
+2022,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,463,A
+2022,Fraser Lower Mainland,January,Cubic metres,millions,50.7,A
+2022,Fraser Lower Mainland,February,Cubic metres,millions,36.3,A
+2022,Fraser Lower Mainland,March,Cubic metres,millions,48.5,A
+2022,Fraser Lower Mainland,April,Cubic metres,millions,39.1,A
+2022,Fraser Lower Mainland,May,Cubic metres,millions,38.1,A
+2022,Fraser Lower Mainland,June,Cubic metres,millions,35.3,A
+2022,Fraser Lower Mainland,July,Cubic metres,millions,32.5,A
+2022,Fraser Lower Mainland,August,Cubic metres,millions,31.3,A
+2022,Fraser Lower Mainland,September,Cubic metres,millions,30.4,A
+2022,Fraser Lower Mainland,October,Cubic metres,millions,35.1,A
+2022,Fraser Lower Mainland,November,Cubic metres,millions,38.6,A
+2022,Fraser Lower Mainland,December,Cubic metres,millions,47.1,A
+2022,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,26.3,B
+2022,Okanagan Similkameen,January,Cubic metres,millions,2,C
+2022,Okanagan Similkameen,February,Cubic metres,millions,2,C
+2022,Okanagan Similkameen,March,Cubic metres,millions,2.4,C
+2022,Okanagan Similkameen,April,Cubic metres,millions,2.4,C
+2022,Okanagan Similkameen,May,Cubic metres,millions,2.1,C
+2022,Okanagan Similkameen,June,Cubic metres,millions,2.2,C
+2022,Okanagan Similkameen,July,Cubic metres,millions,2.3,C
+2022,Okanagan Similkameen,August,Cubic metres,millions,2.3,C
+2022,Okanagan Similkameen,September,Cubic metres,millions,2.2,C
+2022,Okanagan Similkameen,October,Cubic metres,millions,2.1,C
+2022,Okanagan Similkameen,November,Cubic metres,millions,2.1,C
+2022,Okanagan Similkameen,December,Cubic metres,millions,2.3,C
+2022,Columbia,"Total volume, all months",Cubic metres,millions,11.9,A
+2022,Columbia,January,Cubic metres,millions,1,E
+2022,Columbia,February,Cubic metres,millions,0.9,E
+2022,Columbia,March,Cubic metres,millions,1.2,E
+2022,Columbia,April,Cubic metres,millions,1.3,E
+2022,Columbia,May,Cubic metres,millions,1.1,E
+2022,Columbia,June,Cubic metres,millions,1,E
+2022,Columbia,July,Cubic metres,millions,0.9,E
+2022,Columbia,August,Cubic metres,millions,0.9,E
+2022,Columbia,September,Cubic metres,millions,0.9,E
+2022,Columbia,October,Cubic metres,millions,0.8,E
+2022,Columbia,November,Cubic metres,millions,0.9,E
+2022,Columbia,December,Cubic metres,millions,1,E
+2022,Yukon,"Total volume, all months",Cubic metres,millions,4.8,A
+2022,Yukon,January,Cubic metres,millions,0.1,A
+2022,Yukon,February,Cubic metres,millions,0.1,A
+2022,Yukon,March,Cubic metres,millions,0.1,A
+2022,Yukon,April,Cubic metres,millions,0.1,A
+2022,Yukon,May,Cubic metres,millions,0.1,A
+2022,Yukon,June,Cubic metres,millions,0.1,A
+2022,Yukon,July,Cubic metres,millions,0.1,A
+2022,Yukon,August,Cubic metres,millions,1.2,E
+2022,Yukon,September,Cubic metres,millions,1.7,E
+2022,Yukon,October,Cubic metres,millions,1.1,E
+2022,Yukon,November,Cubic metres,millions,0.1,A
+2022,Yukon,December,Cubic metres,millions,0.1,A
+2022,Peace Athabasca,"Total volume, all months",Cubic metres,millions,36.3,A
+2022,Peace Athabasca,January,Cubic metres,millions,3,C
+2022,Peace Athabasca,February,Cubic metres,millions,2.9,C
+2022,Peace Athabasca,March,Cubic metres,millions,3.2,E
+2022,Peace Athabasca,April,Cubic metres,millions,3.7,E
+2022,Peace Athabasca,May,Cubic metres,millions,3.5,E
+2022,Peace Athabasca,June,Cubic metres,millions,3.5,E
+2022,Peace Athabasca,July,Cubic metres,millions,2.8,E
+2022,Peace Athabasca,August,Cubic metres,millions,2.9,C
+2022,Peace Athabasca,September,Cubic metres,millions,2.7,C
+2022,Peace Athabasca,October,Cubic metres,millions,2.7,C
+2022,Peace Athabasca,November,Cubic metres,millions,2.6,C
+2022,Peace Athabasca,December,Cubic metres,millions,2.8,C
+2022,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.6,A
+2022,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2022,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2022,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2022,Lower Mackenzie,April,Cubic metres,millions,0.2,E
+2022,Lower Mackenzie,May,Cubic metres,millions,0.2,E
+2022,Lower Mackenzie,June,Cubic metres,millions,0.2,E
+2022,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2022,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2022,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2022,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2022,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2022,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2023,Pacific Coast,"Total volume, all months",Cubic metres,millions,118.8,A
+2023,Pacific Coast,January,Cubic metres,millions,11.8,C
+2023,Pacific Coast,February,Cubic metres,millions,10,C
+2023,Pacific Coast,March,Cubic metres,millions,10.9,C
+2023,Pacific Coast,April,Cubic metres,millions,10.7,C
+2023,Pacific Coast,May,Cubic metres,millions,9,C
+2023,Pacific Coast,June,Cubic metres,millions,8,C
+2023,Pacific Coast,July,Cubic metres,millions,8.5,C
+2023,Pacific Coast,August,Cubic metres,millions,8.5,C
+2023,Pacific Coast,September,Cubic metres,millions,8,C
+2023,Pacific Coast,October,Cubic metres,millions,10.1,C
+2023,Pacific Coast,November,Cubic metres,millions,10.5,C
+2023,Pacific Coast,December,Cubic metres,millions,12.8,C
+2023,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,453.9,A
+2023,Fraser Lower Mainland,January,Cubic metres,millions,47.4,A
+2023,Fraser Lower Mainland,February,Cubic metres,millions,37.6,A
+2023,Fraser Lower Mainland,March,Cubic metres,millions,38.5,A
+2023,Fraser Lower Mainland,April,Cubic metres,millions,43.1,A
+2023,Fraser Lower Mainland,May,Cubic metres,millions,33.2,A
+2023,Fraser Lower Mainland,June,Cubic metres,millions,31,A
+2023,Fraser Lower Mainland,July,Cubic metres,millions,32.1,A
+2023,Fraser Lower Mainland,August,Cubic metres,millions,31.6,A
+2023,Fraser Lower Mainland,September,Cubic metres,millions,31,A
+2023,Fraser Lower Mainland,October,Cubic metres,millions,37.4,A
+2023,Fraser Lower Mainland,November,Cubic metres,millions,40.3,A
+2023,Fraser Lower Mainland,December,Cubic metres,millions,50.6,A
+2023,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,31.3,C
+2023,Okanagan Similkameen,January,Cubic metres,millions,2.2,C
+2023,Okanagan Similkameen,February,Cubic metres,millions,2,C
+2023,Okanagan Similkameen,March,Cubic metres,millions,2.3,C
+2023,Okanagan Similkameen,April,Cubic metres,millions,2.6,C
+2023,Okanagan Similkameen,May,Cubic metres,millions,2.3,C
+2023,Okanagan Similkameen,June,Cubic metres,millions,2.1,C
+2023,Okanagan Similkameen,July,Cubic metres,millions,3,E
+2023,Okanagan Similkameen,August,Cubic metres,millions,3,E
+2023,Okanagan Similkameen,September,Cubic metres,millions,2.6,C
+2023,Okanagan Similkameen,October,Cubic metres,millions,3,E
+2023,Okanagan Similkameen,November,Cubic metres,millions,2.8,E
+2023,Okanagan Similkameen,December,Cubic metres,millions,3.2,E
+2023,Columbia,"Total volume, all months",Cubic metres,millions,11.5,A
+2023,Columbia,January,Cubic metres,millions,1,E
+2023,Columbia,February,Cubic metres,millions,0.9,E
+2023,Columbia,March,Cubic metres,millions,1,E
+2023,Columbia,April,Cubic metres,millions,1.3,E
+2023,Columbia,May,Cubic metres,millions,1,E
+2023,Columbia,June,Cubic metres,millions,0.9,E
+2023,Columbia,July,Cubic metres,millions,0.9,E
+2023,Columbia,August,Cubic metres,millions,0.9,E
+2023,Columbia,September,Cubic metres,millions,0.8,E
+2023,Columbia,October,Cubic metres,millions,0.8,E
+2023,Columbia,November,Cubic metres,millions,0.8,E
+2023,Columbia,December,Cubic metres,millions,1,E
+2023,Yukon,"Total volume, all months",Cubic metres,millions,4.4,A
+2023,Yukon,January,Cubic metres,millions,0.4,E
+2023,Yukon,February,Cubic metres,millions,0.4,E
+2023,Yukon,March,Cubic metres,millions,0.4,E
+2023,Yukon,April,Cubic metres,millions,0.5,E
+2023,Yukon,May,Cubic metres,millions,0.4,E
+2023,Yukon,June,Cubic metres,millions,0.3,E
+2023,Yukon,July,Cubic metres,millions,0.4,E
+2023,Yukon,August,Cubic metres,millions,0.3,E
+2023,Yukon,September,Cubic metres,millions,0.3,E
+2023,Yukon,October,Cubic metres,millions,0.4,E
+2023,Yukon,November,Cubic metres,millions,0.3,E
+2023,Yukon,December,Cubic metres,millions,0.4,E
+2023,Peace Athabasca,"Total volume, all months",Cubic metres,millions,36.5,A
+2023,Peace Athabasca,January,Cubic metres,millions,2.9,C
+2023,Peace Athabasca,February,Cubic metres,millions,2.7,C
+2023,Peace Athabasca,March,Cubic metres,millions,3.1,C
+2023,Peace Athabasca,April,Cubic metres,millions,3.5,E
+2023,Peace Athabasca,May,Cubic metres,millions,3,E
+2023,Peace Athabasca,June,Cubic metres,millions,3.2,C
+2023,Peace Athabasca,July,Cubic metres,millions,3.4,C
+2023,Peace Athabasca,August,Cubic metres,millions,3.2,C
+2023,Peace Athabasca,September,Cubic metres,millions,3,C
+2023,Peace Athabasca,October,Cubic metres,millions,2.8,C
+2023,Peace Athabasca,November,Cubic metres,millions,2.7,C
+2023,Peace Athabasca,December,Cubic metres,millions,2.9,C
+2023,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.4,B
+2023,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,April,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2023,Lower Mackenzie,December,Cubic metres,millions,0.1,E
+2024,Pacific Coast,"Total volume, all months",Cubic metres,millions,131.3,A
+2024,Pacific Coast,January,Cubic metres,millions,14.9,C
+2024,Pacific Coast,February,Cubic metres,millions,11,C
+2024,Pacific Coast,March,Cubic metres,millions,12.3,C
+2024,Pacific Coast,April,Cubic metres,millions,10.2,C
+2024,Pacific Coast,May,Cubic metres,millions,9.5,C
+2024,Pacific Coast,June,Cubic metres,millions,9,C
+2024,Pacific Coast,July,Cubic metres,millions,8.8,C
+2024,Pacific Coast,August,Cubic metres,millions,9.1,C
+2024,Pacific Coast,September,Cubic metres,millions,8.5,C
+2024,Pacific Coast,October,Cubic metres,millions,11.5,C
+2024,Pacific Coast,November,Cubic metres,millions,12.5,C
+2024,Pacific Coast,December,Cubic metres,millions,13.9,C
+2024,Fraser Lower Mainland,"Total volume, all months",Cubic metres,millions,491.6,A
+2024,Fraser Lower Mainland,January,Cubic metres,millions,55.3,A
+2024,Fraser Lower Mainland,February,Cubic metres,millions,41,A
+2024,Fraser Lower Mainland,March,Cubic metres,millions,41.1,A
+2024,Fraser Lower Mainland,April,Cubic metres,millions,36.3,A
+2024,Fraser Lower Mainland,May,Cubic metres,millions,36.2,A
+2024,Fraser Lower Mainland,June,Cubic metres,millions,35.2,A
+2024,Fraser Lower Mainland,July,Cubic metres,millions,32.6,A
+2024,Fraser Lower Mainland,August,Cubic metres,millions,33.5,A
+2024,Fraser Lower Mainland,September,Cubic metres,millions,32.6,A
+2024,Fraser Lower Mainland,October,Cubic metres,millions,45.1,A
+2024,Fraser Lower Mainland,November,Cubic metres,millions,51.9,A
+2024,Fraser Lower Mainland,December,Cubic metres,millions,51,A
+2024,Okanagan Similkameen,"Total volume, all months",Cubic metres,millions,31.3,B
+2024,Okanagan Similkameen,January,Cubic metres,millions,2.8,E
+2024,Okanagan Similkameen,February,Cubic metres,millions,2.6,C
+2024,Okanagan Similkameen,March,Cubic metres,millions,3.1,E
+2024,Okanagan Similkameen,April,Cubic metres,millions,2.1,C
+2024,Okanagan Similkameen,May,Cubic metres,millions,2,C
+2024,Okanagan Similkameen,June,Cubic metres,millions,2,C
+2024,Okanagan Similkameen,July,Cubic metres,millions,3,C
+2024,Okanagan Similkameen,August,Cubic metres,millions,3.1,E
+2024,Okanagan Similkameen,September,Cubic metres,millions,2.6,C
+2024,Okanagan Similkameen,October,Cubic metres,millions,2.6,C
+2024,Okanagan Similkameen,November,Cubic metres,millions,2.6,C
+2024,Okanagan Similkameen,December,Cubic metres,millions,2.8,E
+2024,Columbia,"Total volume, all months",Cubic metres,millions,12.4,A
+2024,Columbia,January,Cubic metres,millions,1.2,E
+2024,Columbia,February,Cubic metres,millions,0.9,E
+2024,Columbia,March,Cubic metres,millions,1,E
+2024,Columbia,April,Cubic metres,millions,1.2,E
+2024,Columbia,May,Cubic metres,millions,1.1,E
+2024,Columbia,June,Cubic metres,millions,1,E
+2024,Columbia,July,Cubic metres,millions,1,E
+2024,Columbia,August,Cubic metres,millions,1,E
+2024,Columbia,September,Cubic metres,millions,0.9,E
+2024,Columbia,October,Cubic metres,millions,0.9,E
+2024,Columbia,November,Cubic metres,millions,1,E
+2024,Columbia,December,Cubic metres,millions,1.1,E
+2024,Yukon,"Total volume, all months",Cubic metres,millions,4.6,A
+2024,Yukon,January,Cubic metres,millions,0.4,E
+2024,Yukon,February,Cubic metres,millions,0.4,E
+2024,Yukon,March,Cubic metres,millions,0.4,E
+2024,Yukon,April,Cubic metres,millions,0.5,E
+2024,Yukon,May,Cubic metres,millions,0.4,E
+2024,Yukon,June,Cubic metres,millions,0.4,E
+2024,Yukon,July,Cubic metres,millions,0.4,E
+2024,Yukon,August,Cubic metres,millions,0.4,E
+2024,Yukon,September,Cubic metres,millions,0.3,E
+2024,Yukon,October,Cubic metres,millions,0.3,E
+2024,Yukon,November,Cubic metres,millions,0.4,E
+2024,Yukon,December,Cubic metres,millions,0.4,E
+2024,Peace Athabasca,"Total volume, all months",Cubic metres,millions,35.2,A
+2024,Peace Athabasca,January,Cubic metres,millions,2.9,C
+2024,Peace Athabasca,February,Cubic metres,millions,2.6,C
+2024,Peace Athabasca,March,Cubic metres,millions,3,C
+2024,Peace Athabasca,April,Cubic metres,millions,3.2,E
+2024,Peace Athabasca,May,Cubic metres,millions,3.2,E
+2024,Peace Athabasca,June,Cubic metres,millions,3,C
+2024,Peace Athabasca,July,Cubic metres,millions,3,C
+2024,Peace Athabasca,August,Cubic metres,millions,2.9,C
+2024,Peace Athabasca,September,Cubic metres,millions,2.7,C
+2024,Peace Athabasca,October,Cubic metres,millions,2.8,C
+2024,Peace Athabasca,November,Cubic metres,millions,2.9,C
+2024,Peace Athabasca,December,Cubic metres,millions,3.1,C
+2024,Lower Mackenzie,"Total volume, all months",Cubic metres,millions,1.4,A
+2024,Lower Mackenzie,January,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,February,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,March,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,April,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,May,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,June,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,July,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,August,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,September,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,October,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,November,Cubic metres,millions,0.1,E
+2024,Lower Mackenzie,December,Cubic metres,millions,0.1,E

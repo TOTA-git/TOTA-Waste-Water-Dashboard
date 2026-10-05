@@ -1,0 +1,9 @@
+dataset,timestamp,status,n_rows,message
+basin_volumes,2026-10-05 15:49:35,success,1092,NA
+stats_can_release_date,2026-10-05 15:49:39,success,1,NA
+population_served,2026-10-05 15:49:39,success,84,NA
+population_release_date,2026-10-05 15:49:42,success,1,NA
+effluent_id,2026-10-05 15:49:44,success,18,NA
+effluent_monitoring,2026-10-05 15:49:54,success,72392,NA
+effluent_lastModified,2026-10-05 15:49:55,success,1,NA
+effluent_monitoring,2026-10-05 16:50:54,success,72392,NA
