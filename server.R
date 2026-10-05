@@ -974,65 +974,65 @@ server <- function(input, output, session) {
   
   #EFFLUENT TAB =====================================================================================================
   #VALUE BOX TOTAL NUMBER OF SYSTEMS IN THE REGION  -----------------------------------------------------------------
-  output$NumSystems <- renderValueBox({
-    
-    valueBox(
-      value = count(unique(df_effluent_id)),
-      subtitle = paste0("Total wastewater systems"),
-      icon = icon("faucet-drip"),
-      color = "orange"
-    )
-  })
-  
-  #MAP OF EFFLUENT WASTEWATER SYSTEMS -------------------------------------------------------------------------------
-  output$EffluentMapPlot<- renderLeaflet({
-    
-    plot_width <- session$clientData$output_EffluentMapPlot_width
-    is_narrow <- !is.null(plot_width) && plot_width < 600
-    
-    operation_colors <- c(
-      "Wastewater Systems" = "#004B55",
-      "Thompson Okanagan Tourism Region" = "#D11B4A"
-    )
-    
-    m_base <- leaflet(data = df_TO_boundary)  
-    m_tiles <- addTiles(m_base)
-    m_bound <- addPolygons(m_tiles,
-                           data = df_TO_boundary, #add Thompson Okanagan region bounds
-                           fill = FALSE,
-                           color = "#D11B4A",
-                           weight = 2,
-                           opacity = 1
-    ) 
-    
-    m_markers <- addCircleMarkers(m_bound,
-                                  data = df_effluent_id,
-                                  lng = ~`Longitude/ Longitude`,
-                                  lat = ~`Latitude/ Latitude`,
-                                  layerId = ~id,
-                                  radius = 8,
-                                  color = "#000",
-                                  weight = 1,
-                                  fillColor = "#004B55",
-                                  stroke = TRUE,
-                                  fillOpacity = 0.9,
-                                  label = ~paste0(`Nom du propriétaire/ Owner Name`),
-                                  popup = ~paste0("<b>",`Nom du propriétaire/ Owner Name`, "</b><br>",
-                                                  "<b>Daily Avg Effluent Volume: </b>",`Volume journalier moyen de l'effluent (m3) / Average Daily Effluent Volume (m3)`," m³<br>",
-                                                  "<b>Type of treatment: </b>", `Types de traitement (Anglais)/ Treatment Types (English)`, "<br>"
-                                  )
-                                  
-    ) %>%
-      addLegend(
-        position = "bottomright",
-        colors = unname(operation_colors),
-        labels = names(operation_colors),
-        title = "",
-        opacity = 1
-      )
-    
-    setView(m_markers, lng = -118.196086, lat = 50.998195, zoom = 6)
-  })
+  # output$NumSystems <- renderValueBox({
+  #   
+  #   valueBox(
+  #     value = count(unique(df_effluent_id)),
+  #     subtitle = paste0("Total wastewater systems"),
+  #     icon = icon("faucet-drip"),
+  #     color = "orange"
+  #   )
+  # })
+  # 
+  # #MAP OF EFFLUENT WASTEWATER SYSTEMS -------------------------------------------------------------------------------
+  # output$EffluentMapPlot<- renderLeaflet({
+  #   
+  #   plot_width <- session$clientData$output_EffluentMapPlot_width
+  #   is_narrow <- !is.null(plot_width) && plot_width < 600
+  #   
+  #   operation_colors <- c(
+  #     "Wastewater Systems" = "#004B55",
+  #     "Thompson Okanagan Tourism Region" = "#D11B4A"
+  #   )
+  #   
+  #   m_base <- leaflet(data = df_TO_boundary)  
+  #   m_tiles <- addTiles(m_base)
+  #   m_bound <- addPolygons(m_tiles,
+  #                          data = df_TO_boundary, #add Thompson Okanagan region bounds
+  #                          fill = FALSE,
+  #                          color = "#D11B4A",
+  #                          weight = 2,
+  #                          opacity = 1
+  #   ) 
+  #   
+  #   m_markers <- addCircleMarkers(m_bound,
+  #                                 data = df_effluent_id,
+  #                                 lng = ~`Longitude/ Longitude`,
+  #                                 lat = ~`Latitude/ Latitude`,
+  #                                 layerId = ~id,
+  #                                 radius = 8,
+  #                                 color = "#000",
+  #                                 weight = 1,
+  #                                 fillColor = "#004B55",
+  #                                 stroke = TRUE,
+  #                                 fillOpacity = 0.9,
+  #                                 label = ~paste0(`Nom du propriétaire/ Owner Name`),
+  #                                 popup = ~paste0("<b>",`Nom du propriétaire/ Owner Name`, "</b><br>",
+  #                                                 "<b>Daily Avg Effluent Volume: </b>",`Volume journalier moyen de l'effluent (m3) / Average Daily Effluent Volume (m3)`," m³<br>",
+  #                                                 "<b>Type of treatment: </b>", `Types de traitement (Anglais)/ Treatment Types (English)`, "<br>"
+  #                                 )
+  #                                 
+  #   ) %>%
+  #     addLegend(
+  #       position = "bottomright",
+  #       colors = unname(operation_colors),
+  #       labels = names(operation_colors),
+  #       title = "",
+  #       opacity = 1
+  #     )
+  #   
+  #   setView(m_markers, lng = -118.196086, lat = 50.998195, zoom = 6)
+  # })
   
   #ACTION LINKS FOR TABS ON OVERVIEW PAGE ============================================================================================
   observeEvent(input$volume_link, {

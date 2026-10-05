@@ -493,73 +493,73 @@ ui <- dashboardPage(
               Population served by municipal wastewater systems. https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810011901")
           )
         )
-      ),
+      ) #,
       
-      #EFF
-      tabItem(
-        tabName = "effluent",
-        fluidRow(
-          
-          #' tags$style(HTML("
-          #' @media (max-width: 600px) {
-          #'   #YearlyVolPerPersonPlot { height: 350px !important; }
-          #' }"
-          #' )),
-          
-          box(
-            title = "Effluent - ...",
-            solidHeader = TRUE,
-            collapsible = TRUE,
-            width = 12,
-            style = "font-size: 18px;"
-          ),
-          
-          infoBox(
-            title = "",
-            width = 6,
-            color = "light-blue",
-            icon = icon("filter"),
-            value = div(
-              selectInput(
-                "year_eff",
-                "Select Year:",
-                choices = sort(unique(df_effluent$year)),
-                selected = max(df_effluent$year)
-              )
-            )
-          ),
-          
-          infoBox(
-            title = "Data Freshness",
-            width = 6,
-            color = "light-blue",
-            icon = icon("clock-rotate-left"),
-            value = paste0(format(df_effluent_freshness$`data$result$resources$date_published[1]`, "%B %d, %Y")),
-            subtitle = "Updated Annually by Government of Canada, Environmental Protection Branch."
-          ),
-          
-          valueBoxOutput("NumSystems", width = 3),
-          
-          box(
-            title = "Wastewater Systems in the Region",
-            solidHeader = TRUE,
-            collapsible = TRUE,
-            width = 6,
-            leafletOutput("EffluentMapPlot", height = 500)
-          ),
-          
-          box(
-            title = "References",
-            solidHeader = TRUE,
-            collapsible = TRUE,
-            width = 12,
-            p("Data source: Government of Canada, Environment and Climate Change Canada, 
-              Wastewater Systems Effluent Regulations Reported Data Resaeu-Wser-identification. https://catalogue.ec.gc.ca/geonetwork/srv/eng/catalog.search#/metadata/7464033d-04b7-4ce3-b8d5-dd8786e06462"),
-            p("Data source: Government of Canada, Environment and Climate Change Canada, 
-              Wastewater Systems Effluent Regulations Reported Data Resaeu-Wser-surveillance-monitoring. https://catalogue.ec.gc.ca/geonetwork/srv/eng/catalog.search#/metadata/7464033d-04b7-4ce3-b8d5-dd8786e06462")
-          )
-        )
-      )
+      #EFFLUENT TAB =============================================================================================================
+      #' tabItem(
+      #'   tabName = "effluent",
+      #'   fluidRow(
+      #'     
+      #'     #' tags$style(HTML("
+      #'     #' @media (max-width: 600px) {
+      #'     #'   #YearlyVolPerPersonPlot { height: 350px !important; }
+      #'     #' }"
+      #'     #' )),
+      #'     
+      #'     box(
+      #'       title = "Effluent - ...",
+      #'       solidHeader = TRUE,
+      #'       collapsible = TRUE,
+      #'       width = 12,
+      #'       style = "font-size: 18px;"
+      #'     ),
+      #'     
+      #'     infoBox(
+      #'       title = "",
+      #'       width = 6,
+      #'       color = "light-blue",
+      #'       icon = icon("filter"),
+      #'       value = div(
+      #'         selectInput(
+      #'           "year_eff",
+      #'           "Select Year:",
+      #'           choices = sort(unique(df_effluent$year)),
+      #'           selected = max(df_effluent$year)
+      #'         )
+      #'       )
+      #'     ),
+      #'     
+      #'     infoBox(
+      #'       title = "Data Freshness",
+      #'       width = 6,
+      #'       color = "light-blue",
+      #'       icon = icon("clock-rotate-left"),
+      #'       value = paste0(format(df_effluent_freshness$`data$result$resources$date_published[1]`, "%B %d, %Y")),
+      #'       subtitle = "Updated Annually by Government of Canada, Environmental Protection Branch."
+      #'     ),
+      #'     
+      #'     valueBoxOutput("NumSystems", width = 3),
+      #'     
+      #'     box(
+      #'       title = "Wastewater Systems in the Region",
+      #'       solidHeader = TRUE,
+      #'       collapsible = TRUE,
+      #'       width = 6,
+      #'       leafletOutput("EffluentMapPlot", height = 500)
+      #'     ),
+      #'     
+      #'     box(
+      #'       title = "References",
+      #'       solidHeader = TRUE,
+      #'       collapsible = TRUE,
+      #'       width = 12,
+      #'       p("Data source: Government of Canada, Environment and Climate Change Canada, 
+      #'         Wastewater Systems Effluent Regulations Reported Data Resaeu-Wser-identification. https://catalogue.ec.gc.ca/geonetwork/srv/eng/catalog.search#/metadata/7464033d-04b7-4ce3-b8d5-dd8786e06462"),
+      #'       p("Data source: Government of Canada, Environment and Climate Change Canada, 
+      #'         Wastewater Systems Effluent Regulations Reported Data Resaeu-Wser-surveillance-monitoring. https://catalogue.ec.gc.ca/geonetwork/srv/eng/catalog.search#/metadata/7464033d-04b7-4ce3-b8d5-dd8786e06462")
+      #'     )
+      #'   )
+      #' )
     ),
     footer_TOTA
   )
