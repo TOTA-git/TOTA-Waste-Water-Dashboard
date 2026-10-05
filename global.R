@@ -12,6 +12,7 @@ library(httr)
 library(jsonlite)
 library(plotly)
 library(tidyr)
+library(stringr)
 
 source("R/data_helpers.R")
 

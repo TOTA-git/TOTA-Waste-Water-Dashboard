@@ -3485,7 +3485,7 @@
         "Maintainer": "Hadley Wickham <hadley@posit.co>",
         "Repository": "CRAN",
         "Date/Publication": "2025-11-04 14:00:02 UTC",
-        "Built": "R 4.6.1; ; 2026-09-16 00:43:20 UTC; windows",
+        "Built": "R 4.6.1; ; 2026-09-29 13:54:49 UTC; windows",
         "RemoteType": "standard",
         "RemotePkgRef": "stringr",
         "RemoteRef": "stringr",
@@ -4335,7 +4335,7 @@
       "checksum": "6783d12137ce3a2a7507a9d0ee9070eb"
     },
     "global.R": {
-      "checksum": "09192a1fb3de84f2c84b09cebfbc7302"
+      "checksum": "d90b8a65aa8ccdd67910fc2ab84973e9"
     },
     "R/data_helpers.R": {
       "checksum": "a833f859437acd659410fbfcba529eda"
@@ -4344,10 +4344,10 @@
       "checksum": "9fb3e1e10480c6248e9200a2e94df55e"
     },
     "server.R": {
-      "checksum": "98516e41c0fd7de07eccd824d2d51e6d"
+      "checksum": "2cdf5003e3c01b35a7ed52b84f2ba54d"
     },
     "ui.R": {
-      "checksum": "fbffbafdadaa6bef4307a78084b40d1f"
+      "checksum": "eb10479a28d022bb87ba9a563f3906a3"
     },
     "www/banner.png": {
       "checksum": "87b1fda380061c0efffa93fe3253df76"
