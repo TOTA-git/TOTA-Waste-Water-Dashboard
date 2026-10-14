@@ -1,0 +1,56 @@
+name: Scheduled Data Refresh
+
+on:
+  schedule:
+    - cron: '47 17 * * *' # Triggers automatically every single day
+  workflow_dispatch: # Allows manual trigger of test run instantly
+
+jobs:
+  refresh-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Installs system libraries needed by R spatial packages and the chromote browser
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgdal-dev libproj-dev libgeos-dev libudunits2-dev chromium-browser
+
+      # Sets up a headless R instance utilizing pre-compiled Linux binary speeds
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      # Installs all R packages needed
+      - name: Install R Package Dependencies
+        run: |
+          Rscript -e 'install.packages(c("httr", "jsonlite", "readr", "dplyr", "tidyr", "lubridate", "sf", "geojsonsf", "rvest", "chromote", "stringr"))'
+
+      # Executes the data collection script which calls data_helpers.R functions
+      # - name: Run data refresh script
+      #  run: |
+      #    Rscript data_refresh.R
+
+      # Executes data refresh script with explicit browser routing paths and timeout buffers
+      - name: Run data refresh script
+        env:
+          CHROMOTE_CHROME: /usr/bin/chromium-browser
+          R_CHROMOTE_TIMEOUT: "60"
+        run: |
+          Rscript -e 'options(chromote.timeout = 60); source("data_refresh.R")'
+
+      # Commits the cached datasets and the execution history log back to repo
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/cache/
+          # Only commits if changes were detected, preventing empty build loops
+          git diff-index --quiet HEAD || git commit -m "Automated data refresh: $(date +'%Y-%m-%d')"
+          git push
