@@ -13,6 +13,7 @@ library(jsonlite)
 library(plotly)
 library(tidyr)
 library(stringr)
+library(scales)
 
 source("R/data_helpers.R")
 
@@ -63,7 +64,8 @@ df_temp <- df_basin_vol_TO %>%
   rename(
     GEO = DR_Name,
     Volume = VALUE
-  ) 
+  )
+
 df_temp_all_regions <- df_temp %>% #add all regions row for Volume data
   group_by(REF_DATE) %>%
   summarise(
@@ -95,15 +97,31 @@ df_effluent_id <- read_cache_csv("effluent_id")
 #EFFLUENT MONITORING
 df_effluent_monitoring <- read_cache_csv("effluent_monitoring")
 
-
 #FINAL EFFLUENT DF
 df_effluent <- df_effluent_monitoring %>%
   mutate(
-    year = format(as.Date(str_sub(reporting_period,1,4), "%Y"), "%Y")
+    year = str_sub(reporting_period, 1, 4)
   ) %>%
   semi_join(
     df_effluent_id,
     by = "id"
+  )
+
+df_effluent_all <- df_effluent %>%
+  group_by(year) %>%
+  summarise(
+    city = "All Municipalities",
+    eff_deposited_m3 = sum(eff_deposited_m3, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+df_eff_city <- bind_rows(df_effluent, df_effluent_all) 
+
+df_eff_city <- df_eff_city %>%
+  group_by(city, year) %>%
+  summarise(
+    eff_deposited_m3 = sum(eff_deposited_m3, na.rm = TRUE),
+    .groups = "drop"
   )
 
 #EFFLUENT_FRESHNESS

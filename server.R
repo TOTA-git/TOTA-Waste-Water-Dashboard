@@ -1,6 +1,271 @@
 server <- function(input, output, session) {
-#VOLUME TAB ====================================================================================================
-  #VALUE BOX OF TOTAL VOLUME ACROSS ALL 3 DRAINAGE REGIONS ------------------------------------------------------
+  
+#EFFLUENT TAB =======================================================================================================
+  #VALUE BOX TOTAL NUMBER OF SYSTEMS IN THE REGION  -----------------------------------------------------------------
+  output$NumSystems <- renderValueBox({
+    valueBox(
+      value = count(unique(df_effluent_id)),
+      subtitle = paste0("Total wastewater systems"),
+      icon = icon("bridge-water"),
+      color = "orange"
+    )
+  })
+  
+  #VALUE BOX TOTAL YEARLY EFFLUENT VOLUME FOR THE REGION  -----------------------------------------------------------
+  output$TotalEffVol<- renderValueBox({
+    
+    total_vol <- df_effluent %>%
+      filter(year == input$year_eff) %>%
+      summarise(
+        total_vol = sum(eff_deposited_m3, na.rm = TRUE) 
+      ) %>%
+      pull(total_vol)
+    
+    valueBox(
+      value = paste0(scales::comma(round(total_vol, 2)), " m³"),
+      subtitle = paste0("Total volume for ", input$year_eff),
+      icon = icon("water"),
+      color = "teal"
+    )
+  })
+  
+  #VALUE BOX DAILY AVG EFFLUENT VOLUME FOR THE REGION  --------------------------------------------------------------
+  output$AvgDailyEff <- renderValueBox({
+    
+    regional_daily_avg <- df_effluent %>%
+      filter(year == input$year_eff) %>%
+      summarise(
+        regional_daily_avg = sum(eff_deposited_m3, na.rm = TRUE) /
+          sum(days_desposited, na.rm = TRUE)
+      ) %>%
+      pull(regional_daily_avg)
+    
+    valueBox(
+      value = paste0(scales::comma(round(regional_daily_avg, 2)), " m³"),
+      subtitle = paste0("Avg daily volume for ", input$year_eff),
+      icon = icon("faucet-drip"),
+      color = "orange"
+    )
+  })
+  
+  #VALUE BOX YOY CHANGE IN EFFLUENT VOLUME --------------------------------------------------------------------------
+  output$YoYEff <- renderValueBox({
+    
+    selected_year <- as.numeric(input$year_eff)
+    
+    current_period <- df_effluent %>%
+      filter(year == selected_year) %>%
+      summarise(current_period = sum(eff_deposited_m3, na.rm = TRUE)) %>%
+      pull(current_period)
+    
+    prev_period <- df_effluent %>%
+      filter(year == selected_year -1) %>%
+      summarise(prev_period = sum(eff_deposited_m3, na.rm = TRUE)) %>%
+      pull(prev_period)
+    
+    if(prev_period == 0 || current_period == 0){
+      valueBox(
+        value = icon("minus"),
+        subtitle = paste0("No data for ", input$year_eff),
+        icon = icon("xmark"),
+        color = "teal"
+      )
+    } else {
+      YoY_growth <- ((current_period - prev_period) / prev_period) * 100
+      
+      valueBox(
+        value = if (YoY_growth > 0) paste0("+",round(YoY_growth, digits = 2), "%") else paste0(round(YoY_growth, digits = 2), "%"),
+        subtitle = paste0(
+          if (YoY_growth > 0) "Up" else if (YoY_growth == 0) "No change" else "Down",
+          " from ", selected_year - 1
+        ),
+        icon = if (YoY_growth > 0) icon("arrow-up") else if (YoY_growth == 0) icon("minus") else icon("arrow-down"),
+        color = "teal"
+      )
+    }
+  })
+  
+  #MAP OF EFFLUENT WASTEWATER SYSTEMS -------------------------------------------------------------------------------
+  output$EffluentMapPlot<- renderLeaflet({
+    
+    plot_width <- session$clientData$output_EffluentMapPlot_width
+    is_narrow <- !is.null(plot_width) && plot_width < 600
+    
+    operation_colors <- c(
+      "Wastewater Systems" = "#004B55",
+      "Thompson Okanagan Tourism Region" = "#D11B4A"
+    )
+    
+    m_base <- leaflet(data = df_TO_boundary)
+    m_tiles <- addTiles(m_base)
+    m_bound <- addPolygons(m_tiles,
+                           data = df_TO_boundary, #add Thompson Okanagan region bounds
+                           fill = FALSE,
+                           color = "#D11B4A",
+                           weight = 2,
+                           opacity = 1
+    )
+    
+    m_markers <- addCircleMarkers(m_bound,
+                                  data = df_effluent_id,
+                                  lng = ~`Longitude/ Longitude`,
+                                  lat = ~`Latitude/ Latitude`,
+                                  layerId = ~id,
+                                  radius = 8,
+                                  color = "#000",
+                                  weight = 1,
+                                  fillColor = "#004B55",
+                                  stroke = TRUE,
+                                  fillOpacity = 0.9,
+                                  label = ~paste0(`Nom du propriétaire/ Owner Name`),
+                                  popup = ~paste0("<b>",`Nom du propriétaire/ Owner Name`, "</b><br>",
+                                                  "<b>Daily Avg Effluent Volume: </b>", 
+                                                  scales::comma(`Volume journalier moyen de l'effluent (m3) / Average Daily Effluent Volume (m3)`)," m³<br>",
+                                                  "<b>Type of treatment: </b>", `Types de traitement (Anglais)/ Treatment Types (English)`, "<br>"
+                                  )
+                                  
+    ) %>%
+      addLegend(
+        position = "bottomright",
+        colors = unname(operation_colors),
+        labels = names(operation_colors),
+        title = "",
+        opacity = 1
+      )
+    
+    setView(m_markers, lng = -118.196086, lat = 50.998195, zoom = 6)
+  })
+  
+  #EFFULENT VOLUME BY CITY BAR CHART---------------------------------------------------------------------------------
+  output$CityVolBarPlot <- renderPlotly({
+    
+    plot_width <- session$clientData$output_CityVolBarPlot_width
+    is_narrow <- !is.null(plot_width) && plot_width < 600
+    
+    df_eff_filtered <- df_effluent %>%
+      filter(year == input$year_eff) %>%
+      group_by(city) %>%
+      summarise(
+        total_eff = sum(eff_deposited_m3, na.rm = TRUE),
+        .groups = "drop"
+      ) %>%
+      mutate(city = reorder(city, total_eff))
+    
+    plot <- ggplot(df_eff_filtered, aes(x = total_eff,
+                                        y = city, 
+                                        text = paste0(
+                                          "<b>", city, ",</b>",
+                                          "<br><b>", input$year_eff, "</b>",
+                                          "<br><b>Effluent: </b><br>", scales::comma(total_eff), " m³"
+                                        )))+
+      
+      geom_col(linewidth = 1.5, fill = "#76ACA9")+
+      
+      scale_x_continuous(
+        breaks = seq(0, 100000000, by = 2000000),
+        expand = expansion(mult = c(0, 0.1)),
+        labels = function(x) paste0(x / 1000000, "M")
+      )+
+      
+      scale_y_discrete(
+        expand = expansion(add = 0.2)
+      )+
+      
+      labs(
+        y = NULL,
+        x = "Effluent Volume m³"
+      ) +
+      
+      theme(
+        axis.title = element_text(size = if (is_narrow) 12 else 16),
+        axis.text = element_text(size = if (is_narrow) 8 else 12)
+      )
+    
+    ggplotly(plot, tooltip = "text") %>%
+      layout(
+        margin = list(l = 0, r = 10, t = 10, b = 50),
+        hoverlabel = list(
+          bgcolor = "#F6BC1A",
+          bordercolor = "#F6BC1A",
+          font = list(
+            color = "white",
+            size = 13,
+            family = "Arial"
+          ),
+          align = "left"
+        )
+      ) %>%
+      config(displayModeBar = FALSE)
+  })
+  
+  #DYNAMIC UI BOX FOR CITY BAR CHART --------------------------------------------------------------------------------
+  output$CityVolBarPlotBox <- renderUI({
+    box(
+      title = paste0("Effluent Volume by Municipality - ", input$year_eff),
+      solidHeader = TRUE,
+      width = 6,
+      plotlyOutput("CityVolBarPlot", height = 500)
+    )
+  })
+  
+  #EFFLUENT VOLUME FOR ALL YEARS FOR ALL CITIES AND BY INPUT CITY----------------------------------------------------
+  output$EffYearlyLinePlot <- renderPlotly({
+    
+    plot_width <- session$clientData$output_EffYearlyLinePlot_width
+    is_narrow <- !is.null(plot_width) && plot_width < 600
+    
+    df_eff_city_filtered <- df_eff_city %>%
+      filter(city == input$city)
+    
+    plot <- ggplot(df_eff_city_filtered, 
+                   aes(x = year, 
+                       y = eff_deposited_m3,
+                       group = 1,
+                       text = paste0(
+                         "<b>", input$city, "</b>",
+                         "<br>", year,
+                         "<br><b>Volume: </b><br>", scales::comma(eff_deposited_m3), " m³"
+                       ))) + 
+      geom_line(color = "#F6BC1A", linewidth = 1) +
+      
+      scale_x_discrete(
+        expand = expansion(mult = c(0, 0))
+      )+
+      
+      scale_y_continuous(
+        labels = function(x) paste0(x / 1000000, "M"),
+        expand = expansion(0.1)
+      )+
+      
+      labs(
+        x = "Year", 
+        y = "Volume m³"
+      ) +
+      
+      theme(legend.title = element_blank(),
+            axis.title = element_text(size = if (is_narrow) 10 else 16),
+            axis.text = element_text(size = if (is_narrow) 8 else 12),
+            axis.text.x = element_text(angle = if (is_narrow) 60 else 0)
+          )
+    
+    ggplotly(plot, tooltip = "text") %>%
+      layout(
+        hoverlabel = list(
+          bgcolor = "#004B55",
+          bordercolor = "#00363D",
+          font = list(
+            color = "white",
+            size = 13,
+            family = "Arial"
+          ),
+          align = "left"
+        )
+      ) %>%
+      config(displayModeBar = FALSE)
+  })
+  
+#VOLUME TAB =========================================================================================================
+  #VALUE BOX OF TOTAL VOLUME ACROSS ALL 3 DRAINAGE REGIONS ----------------------------------------------------------
   output$TotalVolume <- renderValueBox({
     
     total <- df_basin_vol_TO %>%
@@ -12,14 +277,14 @@ server <- function(input, output, session) {
     total_million <- total * 1000000
     
       valueBox(
-        value = paste0(format(round(total_million), big.mark = ","), " m³"),
+        value = paste0(scales::comma(total_million), " m³"),
         subtitle = paste0("Total volume processed for ", input$year),
         icon = icon("faucet-drip"),
         color = "orange"
       )
   })
   
-  #VALUE BOX YOY CHANGE IN VOLUME ------------------------------------------------------------------------------
+  #VALUE BOX YOY CHANGE IN VOLUME -----------------------------------------------------------------------------------
   output$YoY <- renderValueBox({
     
     selected_year <- as.numeric(input$year)
@@ -35,8 +300,6 @@ server <- function(input, output, session) {
       filter(Month == "Total volume, all months") %>%
       summarise(prev_period = sum(VALUE, na.rm = TRUE)) %>%
       pull(prev_period)
-    
-    
     
     if(prev_period == 0 || current_period == 0){
       valueBox(
@@ -60,7 +323,7 @@ server <- function(input, output, session) {
     }
   })
   
-  #THE % OF WASTEWATER T-O CONTRIBUTED TO BCs TOTAL WASTEWATER PROCESSED ---------------------------------------
+  #THE % OF WASTEWATER T-O CONTRIBUTED TO BCs TOTAL WASTEWATER PROCESSED --------------------------------------------
   output$TotalBCtoTO <- renderValueBox({
     
     BC_total <- df_basin_vol_all %>%
@@ -85,7 +348,7 @@ server <- function(input, output, session) {
     )
   })
   
-  #VALUE BOX VOLUME CHANGE 2013 TO CURRENT--------------------------------------------------------------
+  #VALUE BOX VOLUME CHANGE 2013 TO CURRENT---------------------------------------------------------------------------
   output$VolumeChange<- renderValueBox({
     
     selected_year <- as.numeric(input$year)
@@ -121,10 +384,10 @@ server <- function(input, output, session) {
     }
   })
   
-  #Store selected basin 
+  #Store selected basin ---------------------------------------------------------------------------------------------
   selectedBasin <- reactiveValues(Basin = "All Basins")
   
-  #MAP OF DRAINAGE REGIONS WITH VOLUME POP UP -------------------------------------------------------------------
+  #MAP OF DRAINAGE REGIONS WITH VOLUME POP UP -----------------------------------------------------------------------
   output$VolumeMapPlot<- renderLeaflet({
     
     plot_width <- session$clientData$output_VolumeMapPlot_width
@@ -161,7 +424,7 @@ server <- function(input, output, session) {
           "<br><strong>Year:</strong> ", 
           input$year,
           "<br><strong>Volume processed by sewage systems:<br></strong> ",
-          format((VALUE*1000000), big.mark = ","), " ", "m³",
+          scales::comma(VALUE*1000000), " ", "m³",
           "<br><strong>Data Quality: </strong>",
           STATUS
         )
@@ -181,15 +444,14 @@ server <- function(input, output, session) {
       )
   })
   
-  #REACTIVE EVENT FOR SELECTED BASIN ---------------------------------------------------------------------------
+  #REACTIVE EVENT FOR SELECTED BASIN --------------------------------------------------------------------------------
   observeEvent(input$VolumeMapPlot_shape_click, {
-    
     click <- input$VolumeMapPlot_shape_click
     req(click$id)
     selectedBasin$Basin <- click$id
   })
   
-  #ALL BASIN BAR CHART----------------------------------------------------------------------------
+  #ALL BASIN BAR CHART-----------------------------------------------------------------------------------------------
   output$BasinBarPlot <- renderPlotly({
     
     plot_width <- session$clientData$output_BasinBarPlot_width
@@ -202,20 +464,21 @@ server <- function(input, output, session) {
         DR_Name = factor(
           DR_Name,
           levels = rev(DR_Name)
-        ))
+      ))
     
     plot <- ggplot(df_vol_filtered, aes(y = DR_Name,
-                                                x = VALUE, 
-                                                text = paste0(
+                                        x = VALUE, 
+                                        text = paste0(
                                                   "<b>", DR_Name, ", </b>",
                                                   "<b>", input$year, "</b>",
                                                   "<br><b>Volume processed by sewage systems:<br></b> ",
-                                                  format((VALUE*1000000), big.mark = ","), " ", "m³",
+                                                  scales::comma(VALUE*1000000), " ", "m³",
                                                   "<br><b>Data Quality: </b>",
                                                   STATUS
-                                                )))+
+                                         )))+
       
       geom_col(aes(fill = DR_Name == selectedBasin$Basin), linewidth = 1)+
+      
       scale_fill_manual(
         values = c("FALSE" = "#004B55", "TRUE" = "#D11B4A"),
         guide = "none"
@@ -267,26 +530,23 @@ server <- function(input, output, session) {
       config(displayModeBar = FALSE)
   })
   
-  #SELECTED BASIN REACTIVE DATA FOR MONTHLY LINE CHART ---------------------------------------------------------
+  #SELECTED BASIN REACTIVE DATA FOR MONTHLY LINE CHART --------------------------------------------------------------
   Basin_data_monthly <- reactive({  
     req(selectedBasin$Basin)
     req(input$year)
     
     if (selectedBasin$Basin == "All Basins") {
-      
       df_basin_vol_TO %>%
         filter(REF_DATE == input$year, Month != "Total volume, all months") %>%
         group_by(Month) %>%
         summarise(VALUE = sum(VALUE, na.rm = TRUE), .groups = "drop")
-      
     } else {
-      
       df_basin_vol_TO %>%
         filter(DR_Name == selectedBasin$Basin, REF_DATE == input$year, Month != "Total volume, all months")
     }
   })
   
-  #MONTHLY VOLUME LINE CHART FOR SELECTED BASIN ----------------------------------------------------------------
+  #MONTHLY VOLUME LINE CHART FOR SELECTED BASIN ---------------------------------------------------------------------
   output$MonthlyLinePlot <- renderPlotly({
     
     plot_width <- session$clientData$output_MonthlyLinePlot_width
@@ -365,10 +625,8 @@ server <- function(input, output, session) {
               axis.text.x = element_text(angle = if (is_narrow) 60 else 0))
     }
 
-    
     ggplotly(plot, tooltip = "text") %>%
       layout(
-        margin = list(l = 0, r = 21, t = 0, b = 50),
         hoverlabel = list(
           bgcolor = "#004B55",
           bordercolor = "#00363D",
@@ -383,7 +641,7 @@ server <- function(input, output, session) {
       config(displayModeBar = FALSE)
   })
   
-  #DYNAMIC UI BOX FOR MONTLHY LINE CHART -----------------------------------------------------------------------
+  #DYNAMIC UI BOX FOR MONTLHY LINE CHART ----------------------------------------------------------------------------
   output$MonthlyLinePlotBox <- renderUI({
     
     req(selectedBasin$Basin)
@@ -392,39 +650,30 @@ server <- function(input, output, session) {
     
     box(
       title = paste0("Volume Per Month for ", selectedBasin$Basin, " - ", input$year),
-      
       p("Click a region on the map to show its monthly wastewater volumes."),
       solidHeader = TRUE,
-      collapsible = TRUE,
       width = 12,
-      
-      plotlyOutput(
-        "MonthlyLinePlot",
-        height = 500
-      )
+      plotlyOutput("MonthlyLinePlot", height = 500)
     )
   })
   
-  #SELECTED BASIN REACTIVE DATA FOR YEARLY LINE CHART --------------------------------------------------------------------------------
+  #SELECTED BASIN REACTIVE DATA FOR YEARLY LINE CHART ---------------------------------------------------------------
   Basin_data_yearly <- reactive({  
     req(selectedBasin$Basin)
     req(input$year)
     
     if (selectedBasin$Basin == "All Basins") {
-      
       df_basin_vol_TO %>%
         filter(Month == "Total volume, all months") %>%
         group_by(REF_DATE) %>%
         summarise(VALUE = sum(VALUE, na.rm = TRUE), .groups = "drop")
-      
     } else {
-      
       df_basin_vol_TO %>%
         filter(DR_Name == selectedBasin$Basin, Month == "Total volume, all months")
     }
   })
   
-  #VOLUME FOR ALL YEARS FOR SELECTED BASIN ---------------------------------------------------------------------
+  #VOLUME FOR ALL YEARS FOR SELECTED BASIN --------------------------------------------------------------------------
   output$YearlyLinePlot <- renderPlotly({
     
     plot_width <- session$clientData$output_YearlyLinePlot_width
@@ -507,10 +756,8 @@ server <- function(input, output, session) {
               axis.text.x = element_text(angle = if (is_narrow) 60 else 0))
     }
     
-    
     ggplotly(plot, tooltip = "text") %>%
       layout(
-        margin = list(l = 25, r = 21, t = 0, b = 50),
         hoverlabel = list(
           bgcolor = "#004B55",
           bordercolor = "#00363D",
@@ -525,7 +772,7 @@ server <- function(input, output, session) {
       config(displayModeBar = FALSE)
   })
   
-  #DYNAMIC UI BOX FOR YEARLY LINE CHART ------------------------------------------------------------------------
+  #DYNAMIC UI BOX FOR YEARLY LINE CHART -----------------------------------------------------------------------------
   output$YearlyLinePlotBox <- renderUI({
     
     req(selectedBasin$Basin)
@@ -534,20 +781,14 @@ server <- function(input, output, session) {
     
     box(
       title = paste0("Yearly Volume for ", selectedBasin$Basin, " (", min(df$REF_DATE), " - ", max(df$REF_DATE), ")"),
-      
       p("Click a region on the map to show its yearly wastewater volumes."),
       solidHeader = TRUE,
-      collapsible = TRUE,
       width = 12,
-      
-      plotlyOutput(
-        "YearlyLinePlot",
-        height = 500
-      )
+      plotlyOutput("YearlyLinePlot", height = 500)
     )
   })
   
-  #DATA QUALITY TABLE ------------------------------------------------------------------------------------------
+  #DATA QUALITY TABLE -----------------------------------------------------------------------------------------------
   output$DataQualityTable <- renderUI({
     tags$table(
       tags$tbody(
@@ -570,8 +811,8 @@ server <- function(input, output, session) {
     )
   })
   
-#POPULATION TAB ================================================================================================
-  #VALUE BOX OF TOTAL POPULATION SERVED ACROSS ALL 3 DRAINAGE BASINS -------------------------------------------
+#POPULATION TAB =====================================================================================================
+  #VALUE BOX OF TOTAL POPULATION SERVED ACROSS ALL 3 DRAINAGE BASINS ------------------------------------------------
   output$TotalPop <- renderValueBox({
     
     total <- df_pop_TO %>%
@@ -579,14 +820,14 @@ server <- function(input, output, session) {
       filter(GEO == "All Regions")
     
     valueBox(
-      value = format(total$VALUE, big.mark = ","),
+      value = scales::comma(total$VALUE),
       subtitle = paste0("Total population served for ", input$year_pop),
       icon = icon("users"),
       color = "orange"
     )
   })
   
-  #THE % OF T-O POPULATION SERVED COMPARED TO BCs TOTAL POPULATION SERVED -------------------------------------
+  #THE % OF T-O POPULATION SERVED COMPARED TO BCs TOTAL POPULATION SERVED -------------------------------------------
   output$PopBCtoTO <- renderValueBox({
     
     BC_total <- df_pop_BC %>%
@@ -607,7 +848,7 @@ server <- function(input, output, session) {
     )
   })
   
-  #VALUE BOX YOY CHANGE IN POPULATION --------------------------------------------------------------------------
+  #VALUE BOX YOY CHANGE IN POPULATION -------------------------------------------------------------------------------
   output$YoYpop <- renderValueBox({
     
     selected_year <- as.numeric(input$year_pop)
@@ -642,7 +883,7 @@ server <- function(input, output, session) {
     }
   })
   
-  #VALUE BOX POPULATION CHANGE 2013 TO CURRENT--------------------------------------------------------------
+  #VALUE BOX POPULATION CHANGE 2013 TO CURRENT-----------------------------------------------------------------------
   output$popChange<- renderValueBox({
     
     current_period <- df_pop_TO %>%
@@ -670,7 +911,7 @@ server <- function(input, output, session) {
     }
   })
   
-  #ALL REGIONS POPULATION SERVED BAR CHART----------------------------------------------------------------------------
+  #ALL REGIONS POPULATION SERVED BAR CHART---------------------------------------------------------------------------
   output$RegionsPopBarPlot <- renderPlotly({
     
     plot_width <- session$clientData$output_RegionsPopBarPlot_width
@@ -691,7 +932,7 @@ server <- function(input, output, session) {
                                           "<b>", GEO, ", </b>",
                                           "<b>", input$year_pop, "</b>",
                                           "<br><b>Population served:<br></b> ",
-                                          format(VALUE, big.mark = ",")
+                                          scales::comma(VALUE)
                                         )))+
       
       geom_col(fill = "#004B55")+
@@ -738,12 +979,11 @@ server <- function(input, output, session) {
       config(displayModeBar = FALSE)
   })
   
-  #POPULATION FOR ALL YEARS FOR SELECTED BASIN ---------------------------------------------------------------------
+  #POPULATION FOR ALL YEARS FOR SELECTED BASIN ----------------------------------------------------------------------
   output$YearlyPopPlot <- renderPlotly({
     
     plot_width <- session$clientData$output_YearlyPopPlot_width
     is_narrow <- !is.null(plot_width) && plot_width < 600
-    
     
     df_pop_filtered <- df_pop_TO %>%
       filter(GEO == input$region)
@@ -768,8 +1008,9 @@ server <- function(input, output, session) {
                          text = paste0(
                            "<b>", GEO, "</b>",
                            "<br>", REF_DATE,
-                           "<br><b>Population served: </b><br>", format(VALUE, big.mark = ",")
+                           "<br><b>Population served: </b><br>", scales::comma(VALUE)
                          ))) + 
+      
         geom_line(color = "#004B55", linewidth = 1) +
         
         scale_x_continuous(
@@ -797,10 +1038,8 @@ server <- function(input, output, session) {
               axis.text = element_text(size = if (is_narrow) 8 else 12),
               axis.text.x = element_text(angle = if (is_narrow) 60 else 0))
     
-    
     ggplotly(plot, tooltip = "text") %>%
       layout(
-        margin = list(l = 25, r = 21, t = 0, b = 50),
         hoverlabel = list(
           bgcolor = "#76ACA9",
           bordercolor = "#76ACA9",
@@ -815,22 +1054,22 @@ server <- function(input, output, session) {
       config(displayModeBar = FALSE)
   })
   
-#PER PERSON TAB ===============================================================================================
-  #VALUE BOX OF WASTEWATER PRCESSED PER PERSON SERVED PER YEAR ACROSS ALL 3 DRAINAGE BASINS ----------------------------
+#PER PERSON TAB =====================================================================================================
+  #VALUE BOX OF WASTEWATER PRCESSED PER PERSON SERVED PER YEAR ACROSS ALL 3 DRAINAGE BASINS -------------------------
   output$PerCapitaYear <- renderValueBox({
     
    m_person_year  <- df_pop_vol_TO %>%
       filter(REF_DATE == input$year_perPerson, GEO == "All Regions")
     
     valueBox(
-      value = paste0(round(m_person_year$vol_person_year, digits = 2), " m³/person"),
-      subtitle = paste0("Volume processed per person for ", input$year_perPerson),
+      value = round(m_person_year$vol_person_year, digits = 2),
+      subtitle = paste0("m³/person for ", input$year_perPerson),
       icon = icon("users"),
       color = "orange"
     )
   })
   
-  #VALUE BOX OF WASTEWATER PROCESSED PER PERSON SERVED PER DAY ACROSS ALL 3 DRAINAGE BASINS ----------------------------
+  #VALUE BOX OF WASTEWATER PROCESSED PER PERSON SERVED PER DAY ACROSS ALL 3 DRAINAGE BASINS -------------------------
   output$PerCapitaDay <- renderValueBox({
     
     m_person_year  <- df_pop_vol_TO %>%
@@ -839,15 +1078,14 @@ server <- function(input, output, session) {
     L_day <- (m_person_year$vol_person_year * 1000 / 365)
     
     valueBox(
-      value = paste0(round(L_day, digits = 2), " L/person/day"),
-      subtitle = paste0("Volume processed per person per day for ", input$year_perPerson),
+      value = round(L_day, digits = 2),
+      subtitle = paste0("L/person/day for ", input$year_perPerson),
       icon = icon("person"),
       color = "teal"
     )
   })
   
-  
-  #VALUE BOX YOY CHANGE IN WASTEWATER PROCESSED PER PERSON ALL 3 DRAINAGE BASINS ------------------------------
+  #VALUE BOX YOY CHANGE IN WASTEWATER PROCESSED PER PERSON ALL 3 DRAINAGE BASINS ------------------------------------
   output$YoYCapita <- renderValueBox({
     
     selected_year <- as.numeric(input$year_perPerson)
@@ -880,7 +1118,7 @@ server <- function(input, output, session) {
     }
   })
   
-  #VALUE BOX CHANGE IN VOLUME PROCESSED PER PERSON FROM 2013 TO CURRENT--------------------------------------------------------------
+  #VALUE BOX CHANGE IN VOLUME PROCESSED PER PERSON FROM 2013 TO CURRENT----------------------------------------------
   output$ChangeOverYears<- renderValueBox({
     
     current_period <- df_pop_vol_TO %>%
@@ -908,12 +1146,11 @@ server <- function(input, output, session) {
     }
   })
   
-  #VOLUME PROCESSED PER PERSON FOR ALL YEARS FOR SELECTED BASIN ---------------------------------------------------------------------
+  #VOLUME PROCESSED PER PERSON FOR ALL YEARS FOR SELECTED BASIN -----------------------------------------------------
   output$YearlyVolPerPersonPlot <- renderPlotly({
     
     plot_width <- session$clientData$output_YearlyVolPerPersonPlot_width
     is_narrow <- !is.null(plot_width) && plot_width < 600
-    
     
     df_pop_vol_filtered <- df_pop_vol_TO %>%
       filter(GEO == input$region_perPerson)
@@ -940,7 +1177,6 @@ server <- function(input, output, session) {
       )+
       
       scale_y_continuous(
-        # labels = function(x) paste0(x, "M"),
         expand = expansion(1)
       )+
       
@@ -954,10 +1190,8 @@ server <- function(input, output, session) {
             axis.text = element_text(size = if (is_narrow) 8 else 12),
             axis.text.x = element_text(angle = if (is_narrow) 60 else 0))
     
-    
     ggplotly(plot, tooltip = "text") %>%
       layout(
-        margin = list(l = 25, r = 21, t = 0, b = 50),
         hoverlabel = list(
           bgcolor = "#76ACA9",
           bordercolor = "#76ACA9",
@@ -971,70 +1205,12 @@ server <- function(input, output, session) {
       ) %>%
       config(displayModeBar = FALSE)
   })
+
+  #ACTION LINKS FOR TABS ON OVERVIEW PAGE ===========================================================================
+  observeEvent(input$effluent_link, {
+    updateTabItems(session, "tabs", "effluent")
+  })
   
-  #EFFLUENT TAB =====================================================================================================
-  #VALUE BOX TOTAL NUMBER OF SYSTEMS IN THE REGION  -----------------------------------------------------------------
-  # output$NumSystems <- renderValueBox({
-  #   
-  #   valueBox(
-  #     value = count(unique(df_effluent_id)),
-  #     subtitle = paste0("Total wastewater systems"),
-  #     icon = icon("faucet-drip"),
-  #     color = "orange"
-  #   )
-  # })
-  # 
-  # #MAP OF EFFLUENT WASTEWATER SYSTEMS -------------------------------------------------------------------------------
-  # output$EffluentMapPlot<- renderLeaflet({
-  #   
-  #   plot_width <- session$clientData$output_EffluentMapPlot_width
-  #   is_narrow <- !is.null(plot_width) && plot_width < 600
-  #   
-  #   operation_colors <- c(
-  #     "Wastewater Systems" = "#004B55",
-  #     "Thompson Okanagan Tourism Region" = "#D11B4A"
-  #   )
-  #   
-  #   m_base <- leaflet(data = df_TO_boundary)  
-  #   m_tiles <- addTiles(m_base)
-  #   m_bound <- addPolygons(m_tiles,
-  #                          data = df_TO_boundary, #add Thompson Okanagan region bounds
-  #                          fill = FALSE,
-  #                          color = "#D11B4A",
-  #                          weight = 2,
-  #                          opacity = 1
-  #   ) 
-  #   
-  #   m_markers <- addCircleMarkers(m_bound,
-  #                                 data = df_effluent_id,
-  #                                 lng = ~`Longitude/ Longitude`,
-  #                                 lat = ~`Latitude/ Latitude`,
-  #                                 layerId = ~id,
-  #                                 radius = 8,
-  #                                 color = "#000",
-  #                                 weight = 1,
-  #                                 fillColor = "#004B55",
-  #                                 stroke = TRUE,
-  #                                 fillOpacity = 0.9,
-  #                                 label = ~paste0(`Nom du propriétaire/ Owner Name`),
-  #                                 popup = ~paste0("<b>",`Nom du propriétaire/ Owner Name`, "</b><br>",
-  #                                                 "<b>Daily Avg Effluent Volume: </b>",`Volume journalier moyen de l'effluent (m3) / Average Daily Effluent Volume (m3)`," m³<br>",
-  #                                                 "<b>Type of treatment: </b>", `Types de traitement (Anglais)/ Treatment Types (English)`, "<br>"
-  #                                 )
-  #                                 
-  #   ) %>%
-  #     addLegend(
-  #       position = "bottomright",
-  #       colors = unname(operation_colors),
-  #       labels = names(operation_colors),
-  #       title = "",
-  #       opacity = 1
-  #     )
-  #   
-  #   setView(m_markers, lng = -118.196086, lat = 50.998195, zoom = 6)
-  # })
-  
-  #ACTION LINKS FOR TABS ON OVERVIEW PAGE ============================================================================================
   observeEvent(input$volume_link, {
     updateTabItems(session, "tabs", "volume")
   })

@@ -64,8 +64,8 @@ refresh_dataset(
       mode = "wb"
     )
     unzip(zipfile = tmp_zip, exdir = tmp_dir)
-   data_unfiltered <- read.csv(file.path(tmp_dir, "38100099.csv"))
-   data <- data_unfiltered %>%
+    data_unfiltered <- read.csv(file.path(tmp_dir, "38100099.csv"))
+    data <- data_unfiltered %>%
      filter(GEO == "Okanagan-Similkameen drainage region" | GEO == "Fraser-Lower Mainland drainage region" | GEO == "Columbia drainage region" |
               GEO == "Pacific Coastal drainage region" | GEO == "Peace-Athabasca drainage region" | GEO == "Lower Mackenzie drainage region" |
               GEO == "Yukon drainage region") %>% 
@@ -96,6 +96,12 @@ refresh_dataset(
     
     date_text = html_text(release)
     just_date <- as.Date(str_extract(date_text, "\\d{4}-\\d{2}-\\d{2}"), format="%Y-%m-%d")
+    
+    # Stop refresh if date is missing
+    if (is.na(just_date)) {
+      stop("Release date is NA. Keeping previous cache.")
+    }
+    
     df <- as.data.frame(just_date)
   },
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "stats_can_release_date.csv"))
@@ -149,6 +155,12 @@ refresh_dataset(
     
     date_text = html_text(release)
     just_date <- as.Date(str_extract(date_text, "\\d{4}-\\d{2}-\\d{2}"), format="%Y-%m-%d")
+    
+    # Stop refresh if date is missing
+    if (is.na(just_date)) {
+      stop("Release date is NA. Keeping previous cache.")
+    }
+    
     df <- as.data.frame(just_date)
   },
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "population_release_date.csv"))
@@ -190,7 +202,6 @@ refresh_dataset(
     
     # Remove geometry before saving CSV
     st_drop_geometry(omrr_sf)
-    
   },
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "effluent_id.csv"))
 )
@@ -201,35 +212,36 @@ refresh_dataset(
   function() {
     url <- "https://data-donnees.az.ec.gc.ca/api/file?path=%2Fsubstances%2Fplaninfrastruture%2Fwastewater-systems-effluent-regulations-reported-data%2FResaeu-Wser-surveillance-monitoring.csv"
     
-   df <- readr::read_csv(
+    df <- readr::read_csv(
         url,
         locale = readr::locale(encoding = "Windows-1252"),
         show_col_types = FALSE
       )
-  df <- df %>%
-    select(`Identification de l'installation/ Facility Identification`, `Période de déclaration/ Reporting Period`, `Nom du propriétaire/ Owner Name`, `Nom du système/ System Name`,
-           `Ville / City`, `Mois/ Month`, `Volume journalier moyen de l'effluent (m3)/ Average Daily Effluent Volume (m3)`, `Périodes decalcul (Anglais)/ Averaging Period (English)`,
-           `Volume total de l’effluent rejeté en mètre cube (m3) pour la période de calcul de la moyenne/ Total volume of effluent deposited in cubic metres (m3) for averaging period`,
-           `Nombre total de jours où l’effluent a été rejeté durant la période de calcul de la moyenne/ Total number of days effluent was deposited for averaging period`,
-           `Moyenne des matières en suspension (mg/L) pour la période de calcul de la moyenne/ Average suspended solids (mg/L) for averaging period`, `Limite des matières en suspension/ Suspended Solids Limit`,
-    ) %>% 
-    rename(
-      id = `Identification de l'installation/ Facility Identification`,
-      reporting_period = `Période de déclaration/ Reporting Period`,
-      owner_name = `Nom du propriétaire/ Owner Name`,
-      system_name = `Nom du système/ System Name`,
-      city = `Ville / City`, 
-      month = `Mois/ Month`,
-      avg_daily_eff_m3 = `Volume journalier moyen de l'effluent (m3)/ Average Daily Effluent Volume (m3)`,
-      period = `Périodes decalcul (Anglais)/ Averaging Period (English)`,
-      eff_deposited_m3 = `Volume total de l’effluent rejeté en mètre cube (m3) pour la période de calcul de la moyenne/ Total volume of effluent deposited in cubic metres (m3) for averaging period`,
-      days_desposited = `Nombre total de jours où l’effluent a été rejeté durant la période de calcul de la moyenne/ Total number of days effluent was deposited for averaging period`,
-      avg_ss_mgL = `Moyenne des matières en suspension (mg/L) pour la période de calcul de la moyenne/ Average suspended solids (mg/L) for averaging period`,
-      ss_limit = `Limite des matières en suspension/ Suspended Solids Limit`
-    ) 
-  
-  df
-  
+    df <- df %>%
+        select(`Identification de l'installation/ Facility Identification`, `Période de déclaration/ Reporting Period`, `Nom du propriétaire/ Owner Name`, `Nom du système/ System Name`,
+              `Ville / City`, `Mois/ Month`, `Volume journalier moyen de l'effluent (m3)/ Average Daily Effluent Volume (m3)`, `Périodes decalcul (Anglais)/ Averaging Period (English)`,
+              `Volume total de l’effluent rejeté en mètre cube (m3) pour la période de calcul de la moyenne/ Total volume of effluent deposited in cubic metres (m3) for averaging period`,
+              `Nombre total de jours où l’effluent a été rejeté durant la période de calcul de la moyenne/ Total number of days effluent was deposited for averaging period`,
+               `Moyenne des matières en suspension (mg/L) pour la période de calcul de la moyenne/ Average suspended solids (mg/L) for averaging period`, `Limite des matières en suspension/ Suspended Solids Limit`,
+        ) %>% 
+        rename(
+          id = `Identification de l'installation/ Facility Identification`,
+          reporting_period = `Période de déclaration/ Reporting Period`,
+          owner_name = `Nom du propriétaire/ Owner Name`,
+          system_name = `Nom du système/ System Name`,
+          city = `Ville / City`, 
+          month = `Mois/ Month`,
+          avg_daily_eff_m3 = `Volume journalier moyen de l'effluent (m3)/ Average Daily Effluent Volume (m3)`,
+          period = `Périodes decalcul (Anglais)/ Averaging Period (English)`,
+          eff_deposited_m3 = `Volume total de l’effluent rejeté en mètre cube (m3) pour la période de calcul de la moyenne/ Total volume of effluent deposited in cubic metres (m3) for averaging period`,
+          days_desposited = `Nombre total de jours où l’effluent a été rejeté durant la période de calcul de la moyenne/ Total number of days effluent was deposited for averaging period`,
+          avg_ss_mgL = `Moyenne des matières en suspension (mg/L) pour la période de calcul de la moyenne/ Average suspended solids (mg/L) for averaging period`,
+          ss_limit = `Limite des matières en suspension/ Suspended Solids Limit`
+        ) %>%
+        mutate(
+          city = str_to_title(city)
+        )
+    df
   },
   function(df) atomic_write_csv(df, file.path(CACHE_DIR, "effluent_monitoring.csv"))
 )

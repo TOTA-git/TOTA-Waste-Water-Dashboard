@@ -3,7 +3,7 @@ library(bslib)
 library(shinydashboard)
 library(fresh)
 
-#COLOR THEME --------------------------------
+#COLOR THEME -----------------------------------------------------------------------------------------
 TOTA_theme <- create_theme(
   adminlte_color(
     light_blue = "#004B55",
@@ -11,11 +11,10 @@ TOTA_theme <- create_theme(
     orange = "#F6BC1A",
     teal = "#76ACA9",
     fuchsia = "#D11B4A"
-    #red, yellow, aqua, blue, light-blue, green, navy, teal, olive, lime, orange, fuchsia, purple, maroon, black.
   )
 )
 
-#FOOTER -----------------------------------
+#FOOTER ----------------------------------------------------------------------------------------------
 footer_TOTA <- tags$footer( 
   tags$style(HTML("
     @media (max-width: 600px) {
@@ -27,9 +26,9 @@ footer_TOTA <- tags$footer(
       }
       #footer-credit p {
         font-size: 11px !important;
-      }
-    }
-  ")),
+      }}"
+    )),
+  
   div(
     div(
       tags$img(
@@ -52,7 +51,6 @@ footer_TOTA <- tags$footer(
         target = "_blank",
         style ="color: white;"
       ),
-      
       
       p("2280-D Leckie Road, Kelowna,",
         style = "margin-bottom: 2px;"
@@ -82,7 +80,7 @@ footer_TOTA <- tags$footer(
   style = "position: relative; bottom: 0; left: 0; width: 100%; z-index: 9999;"
 )
 
-#UI -------------------------------------------------------------
+#HEADER ----------------------------------------------------------------------------------------------
 ui <- dashboardPage(
   dashboardHeader(
     title = "Wastewater Dashboard",
@@ -101,14 +99,15 @@ ui <- dashboardPage(
     )             
   ),
   
+  #SIDE BAR / NAV ------------------------------------------------------------------------------------
   dashboardSidebar(
     sidebarMenu(
       id = "tabs",
       menuItem("Overview", tabName = "overview", icon = icon("readme")),
-      menuItem("Volume", tabName = "volume", icon = icon("water")),
+      menuItem("Effluent", tabName ="effluent", icon = icon("bridge-water")),
+      menuItem("Volume Processed", tabName = "volume", icon = icon("water")),
       menuItem("Population Served", tabName = "population", icon = icon("people-group")),
       menuItem("Volume Per Person", tabName = "perPerson", icon = icon("person")),
-      # menuItem("Effluent", tabName ="effluent", icon = icon("bridge-water")),
       menuItem("Back to Hub", tabName = NULL, icon = icon("globe"), href = "https://tota-insto-hub.share.connect.posit.cloud/", newtab = FALSE)
     ),
     
@@ -124,13 +123,13 @@ ui <- dashboardPage(
       style = "display: block; margin: 0 auto; padding-top: 40px;"
     )
   ),
-  
+ 
+#OVERVIEW TAB ---------------------------------------------------------------------------------------
   dashboardBody(
     use_theme(TOTA_theme),
     
     tabItems(
       
-      #OVERVIEW TAB -------------------------------------------
       tabItem(
         tabName = "overview",
         
@@ -140,6 +139,7 @@ ui <- dashboardPage(
           style = "position: relative;"
         ),
         p("RDCO/West Kelowna Wastewater Treatment Plant", style = "font-size: 12px;"),
+        
         fluidRow(
           width = "100%",
           
@@ -168,23 +168,22 @@ ui <- dashboardPage(
             tags$head(tags$style(
               HTML(
                 ".explore-link {
-                                    display: block;
-                                    font-size: 18px;
-                                    font-weight: 600;
-                                    margin-top: 10px;
-                                    margin-bottom: 10px;
-                                    color: #004B55;
-                                    text-decoration: none;
-                                  }
-                                  .explore-link:hover {
-                                    text-decoration: underline;
-                                    cursor: pointer;
-                                  }
-                                "
-              )
+                    display: block;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    color: #004B55;
+                    text-decoration: none;
+                  }
+                  .explore-link:hover {
+                      text-decoration: underline;
+                      cursor: pointer;
+                  }"
+                )
             )),
             
-            width = 6,
+            width = 12,
             h2("What is Wastewater Management?"),
             
             p("Wastewater management is the collection, treatment, and distribution 
@@ -198,15 +197,22 @@ ui <- dashboardPage(
             h2("What Can Be Explored?"),
             
             actionLink(
+              "effluent_link",
+              strong("Effluent - How much effluent is being desposited in the region?"),
+              class = "explore-link"
+            ),
+            p("View wastewater systems in the region and compare municipalities."),
+            
+            actionLink(
               "volume_link",
-              strong("Wastewater Volumes - How much wastewater is being processed by municipal sewage systems?"),
+              strong("Volume Processed - How much wastewater is being processed by municipal sewage systems?"),
               class = "explore-link"
             ),
             p("Explore total volume processed across drainage regions."),
             
             actionLink(
               "population_link",
-              strong("Population served - How many people are served by municipal wastewater systems?"),
+              strong("Population Served - How many people are served by municipal wastewater systems?"),
               class = "explore-link"
             ),
             p("View total population served and its change over time."),
@@ -218,24 +224,116 @@ ui <- dashboardPage(
             ),
             p("Explore total volume processed per person served per year and per day."),
             br(),
-            tags$style(HTML(".explore-link {
-                              color: #42817A;
-                              font-size: 20px;
-                              font-weight: bold;
-                              text-decoration: none;
-                            }
-                          
-                            .explore-link:hover {
-                              text-decoration: underline;
-                            }
-                          ")),
-
+            tags$style(
+              HTML(
+                ".explore-link {
+                    color: #42817A;
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+                 .explore-link:hover {
+                    text-decoration: underline;
+                }"
+              )
+            ),
           )
         ),
-        
         style = "width: 100%; font-size: 18px;"
       ),
-      #WASTEWATER VOLUME TAB -----------------------------------------------------------------
+      
+      #EFFLUENT TAB ------------------------------------------------------------------------------------
+      tabItem(
+        tabName = "effluent",
+        fluidRow(
+          
+          tags$style(HTML("
+          @media (max-width: 600px) {
+            #EffluentMapPlot { height: 350px !important; }
+            #CityVolBarPlot { height: 350px !important; }
+            #EffYearlyLinePlot { height: 350px !important; }
+          }"
+          )),
+          
+          box(
+            title = "Effluent - How much effluent is being desposited in the region?",
+            solidHeader = TRUE,
+            width = 12,
+            p("This dashboard explores the volume of effluent discharged across the Thompson Okanagan Tourism Region. 
+              Effluent is liquid wastewater released from wastewater treatment systems into the environment. 
+              The data represents effluent discharged to waters frequented by fish through a facility’s final discharge point; 
+              it does not reflect the total volume of wastewater treated or reclaimed. For example, the City of Vernon operates a 
+              wastewater reclamation system that reuses much of its treated wastewater for irrigation rather than discharging it. 
+              As a result, reported discharge volumes may not reflect the total volume of wastewater processed by a facility. 
+              Differences in wastewater reuse practices and discharge methods should therefore be considered when comparing facilities or trends."),
+            style = "font-size: 18px;"
+          ),
+          
+          infoBox(
+            title = "",
+            width = 6,
+            color = "light-blue",
+            icon = icon("filter"),
+            value = div(
+              selectInput(
+                "year_eff",
+                "Select Year:",
+                choices = sort(unique(df_effluent$year)),
+                selected = max(df_effluent$year)
+              )
+            )
+          ),
+          
+          infoBox(
+            title = "Data Freshness",
+            width = 6,
+            color = "light-blue",
+            icon = icon("clock-rotate-left"),
+            value = paste0(format(as.Date(df_effluent_freshness$`data$result$resources$date_published[1]`), format = "%B %d, %Y")),
+            subtitle = "Updated Annually by Government of Canada, Environmental Protection Branch."
+          ),
+          
+          valueBoxOutput("NumSystems", width = 3),
+          valueBoxOutput("TotalEffVol", width = 3),
+          valueBoxOutput("AvgDailyEff", width = 3),
+          valueBoxOutput("YoYEff", width = 3),
+          
+          box(
+            title = "Wastewater Systems in the Region",
+            solidHeader = TRUE,
+            width = 6,
+            leafletOutput("EffluentMapPlot", height = 500)
+          ),
+          
+          uiOutput("CityVolBarPlotBox", height = 500),
+          
+          box(
+            title = "Yearly Effluent Volume Deposited",
+            solidHeader = TRUE,
+            width = 12,
+            selectInput(
+              "city",
+              "Select Municipality:",
+              choices = sort(unique(df_eff_city$city)),
+              selected = df_eff_city$city == "All Municipalities",
+              width = "250"
+            ),
+            plotlyOutput("EffYearlyLinePlot", height = 500)
+          ),
+          
+          box(
+            title = "References",
+            solidHeader = TRUE,
+            width = 12,
+            p("Data source: Government of Canada, Environment and Climate Change Canada,
+              Wastewater Systems Effluent Regulations Reported Data Resaeu-Wser-identification. https://catalogue.ec.gc.ca/geonetwork/srv/eng/catalog.search#/metadata/7464033d-04b7-4ce3-b8d5-dd8786e06462"),
+            p("Data source: Government of Canada, Environment and Climate Change Canada,
+              Wastewater Systems Effluent Regulations Reported Data Resaeu-Wser-surveillance-monitoring. https://catalogue.ec.gc.ca/geonetwork/srv/eng/catalog.search#/metadata/7464033d-04b7-4ce3-b8d5-dd8786e06462")
+          )
+        )
+      ),
+      
+      #WASTEWATER VOLUME TAB ------------------------------------------------------------------------
       tabItem(
         tabName = "volume",
         
@@ -245,15 +343,14 @@ ui <- dashboardPage(
             #MonthlyLinePlot { height: 350px !important; }
             #YearlyLinePlot { height: 350px !important; }
             #BasinBarPlot { height: 350px !important; }
-          }
-        ")),
+          }"
+        )),
         
         fluidRow(
           
           box(
             title = "Wastewater Volumes - How much wastewater is being processed by municipal sewage systems?",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             p("This data brings together the volume of wastewater processed by municipal sewage systems within the Fraser Lower Mainland,
               Columbia, and Okanagan-Similkameen drainage regions. These drainage regions make up, and extend beyond, the boundaries of the 
@@ -263,41 +360,29 @@ ui <- dashboardPage(
               influence the volume processed. These influences can be observed through seasonal and month-to-month variations in wastewater volumes."),
             style = "font-size: 18px;"
           ),
-          
-          
 
-            infoBox(
-              title = "",
-              width = 6,
-              color = "light-blue",
-              icon = icon("filter"),
-              value = div(
-                selectInput(
-                  "year",
-                  "Select Year:",
-                  choices = sort(unique(df_basin_vol_TO$REF_DATE)),
-                  selected = max(df_basin_vol_TO$REF_DATE)
-                )
-              )
-            ),
-  
-            infoBox(
-              title = "Data Freshness",
-              width = 6,
-              color = "light-blue",
-              icon = icon("clock-rotate-left"),
-              value = paste0(format(df_stats_freshness$just_date, "%B %d, %Y")),
-              subtitle = "Statistics Canada will no longer be updating this data."
-            ),
-          
-          
           infoBox(
-            title = "Data Quality Guide",
-            width = 12,
+            title = "",
+            width = 6,
             color = "light-blue",
-            icon = icon("ranking-star"),
-            value = htmlOutput("DataQualityTable", style = "font-size: 16.5px;"),
-            subtitle = "The data is gathered via survey. Sampling errors and the non-response rate are combined into one quality rating code for each estimate. "
+            icon = icon("filter"),
+            value = div(
+              selectInput(
+                "year",
+                "Select Year:",
+                choices = sort(unique(df_basin_vol_TO$REF_DATE)),
+                selected = max(df_basin_vol_TO$REF_DATE)
+              )
+            )
+          ),
+  
+          infoBox(
+            title = "Data Freshness",
+            width = 6,
+            color = "light-blue",
+            icon = icon("clock-rotate-left"),
+            value = format(as.Date(df_stats_freshness$just_date), format = "%B %d, %Y"),
+            subtitle = "Updated by Statistics Canada."
           ),
           
           valueBoxOutput("TotalVolume", width = 3),
@@ -308,7 +393,6 @@ ui <- dashboardPage(
           box(
             title = "Select a Drainage Region",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width =,
             leafletOutput("VolumeMapPlot", height = 500)
           ),
@@ -316,7 +400,6 @@ ui <- dashboardPage(
           box(
             title = paste0("Wastewater Volume by Drainage Region"),
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 6,
             plotlyOutput("BasinBarPlot", height = 500)
           ),
@@ -324,17 +407,25 @@ ui <- dashboardPage(
           uiOutput("MonthlyLinePlotBox", height = 500),
           uiOutput("YearlyLinePlotBox", height = 500),
           
+          infoBox(
+            title = "Data Quality Guide",
+            width = 12,
+            color = "light-blue",
+            icon = icon("ranking-star"),
+            value = htmlOutput("DataQualityTable", style = "font-size: 16.5px;"),
+            subtitle = "The data is gathered via survey. Sampling errors and the non-response rate are combined into one quality rating code for each estimate. "
+          ),
+          
           box(
             title = "References",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
-            p("Data source: Statistics Canada, Environmental Accounts and Statistics Division, 
-              Wastewater volumes processed by municipal sewage systems. https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810009901")
+            p("Data source: Statistics Canada. Table 38-10-0099-01 Wastewater volumes processed by municipal sewage systems (x 1,000,000) https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810009901")
           )
         )
       ),
       
+      #POPULATION  TAB ---------------------------------------------------------------------------------
       tabItem(
         tabName = "population",
         
@@ -342,15 +433,14 @@ ui <- dashboardPage(
           @media (max-width: 600px) {
             #RegionsPopBarPlot { height: 350px !important; }
             #YearlyPopPlot { height: 350px !important; }
-          }
-        ")),
+          }"
+        )),
         
         fluidRow(
           
           box(
             title = "Population served - How many people are served by municipal wastewater systems?",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             p("This data focuses on population served by municipal wastewater systems within the Fraser Lower Mainland,
               Columbia, and Okanagan-Similkameen drainage regions. These drainage regions make up, and extend beyond, the boundaries of the 
@@ -379,8 +469,11 @@ ui <- dashboardPage(
             width = 6,
             color = "light-blue",
             icon = icon("clock-rotate-left"),
-            value = paste0(format(df_pop_freshness$just_date, "%B %d, %Y")),
-            subtitle = "Statistics Canada will no longer be updating this data."
+            value = format(
+              as.Date(df_pop_freshness$just_date),
+              format = "%B %d, %Y"
+            ),
+            subtitle = "Updated by Statistics Canada."
           ),
           
           valueBoxOutput("TotalPop", width = 3),
@@ -391,7 +484,6 @@ ui <- dashboardPage(
           box(
             title = "Population Served by Drainage Region",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             plotlyOutput("RegionsPopBarPlot", height = 500)
           ),
@@ -399,7 +491,6 @@ ui <- dashboardPage(
           box(
             title = paste0("Population Served from ", min(df_pop_TO$REF_DATE), " - " , max(df_pop_TO$REF_DATE)),
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             selectInput(
                 "region",
@@ -414,14 +505,13 @@ ui <- dashboardPage(
           box(
             title = "References",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
-            p("Data source: Statistics Canada, Environmental Accounts and Statistics Division, 
-              Population served by municipal wastewater systems. https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810011901")
+            p("Data source: Statistics Canada. Table 38-10-0119-01 Population served by municipal wastewater systems https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810011901")
           )
         )
       ),
-      #PER PERSON TAB -- WASTEWATER PROCESSED PER PERSON SERVED -----------------------------------------------------------------
+      
+      #PER PERSON TAB -- WASTEWATER PROCESSED PER PERSON SERVED ---------------------------------------------------
       tabItem(
         tabName = "perPerson",
         fluidRow(
@@ -435,7 +525,6 @@ ui <- dashboardPage(
           box(
             title = paste0("Volume Per Person - How much wastewater is processed per person served?"),
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             p("Using Statistics Canada data on municipal wastewater volumes and population 
               served. The volume per person indicator is calculated by dividing the total annual wastewater volume by the population 
@@ -470,7 +559,6 @@ ui <- dashboardPage(
           box(
             title = paste0("Volume Processed Per Person Served ", min(df_pop_vol_TO$REF_DATE), " - " , max(df_pop_vol_TO$REF_DATE)),
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
             selectInput(
               "region_perPerson",
@@ -485,81 +573,12 @@ ui <- dashboardPage(
           box(
             title = "References",
             solidHeader = TRUE,
-            collapsible = TRUE,
             width = 12,
-            p("Data source: Statistics Canada, Environmental Accounts and Statistics Division, 
-              Wastewater volumes processed by municipal sewage systems. https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810009901"),
-            p("Data source: Statistics Canada, Environmental Accounts and Statistics Division, 
-              Population served by municipal wastewater systems. https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810011901")
+            p("Data source: Statistics Canada. Table 38-10-0099-01 Wastewater volumes processed by municipal sewage systems (x 1,000,000) https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810009901"),
+            p("Data source: Statistics Canada. Table 38-10-0119-01 Population served by municipal wastewater systems https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3810011901")
           )
         )
-      ) #,
-      
-      #EFFLUENT TAB =============================================================================================================
-      #' tabItem(
-      #'   tabName = "effluent",
-      #'   fluidRow(
-      #'     
-      #'     #' tags$style(HTML("
-      #'     #' @media (max-width: 600px) {
-      #'     #'   #YearlyVolPerPersonPlot { height: 350px !important; }
-      #'     #' }"
-      #'     #' )),
-      #'     
-      #'     box(
-      #'       title = "Effluent - ...",
-      #'       solidHeader = TRUE,
-      #'       collapsible = TRUE,
-      #'       width = 12,
-      #'       style = "font-size: 18px;"
-      #'     ),
-      #'     
-      #'     infoBox(
-      #'       title = "",
-      #'       width = 6,
-      #'       color = "light-blue",
-      #'       icon = icon("filter"),
-      #'       value = div(
-      #'         selectInput(
-      #'           "year_eff",
-      #'           "Select Year:",
-      #'           choices = sort(unique(df_effluent$year)),
-      #'           selected = max(df_effluent$year)
-      #'         )
-      #'       )
-      #'     ),
-      #'     
-      #'     infoBox(
-      #'       title = "Data Freshness",
-      #'       width = 6,
-      #'       color = "light-blue",
-      #'       icon = icon("clock-rotate-left"),
-      #'       value = paste0(format(df_effluent_freshness$`data$result$resources$date_published[1]`, "%B %d, %Y")),
-      #'       subtitle = "Updated Annually by Government of Canada, Environmental Protection Branch."
-      #'     ),
-      #'     
-      #'     valueBoxOutput("NumSystems", width = 3),
-      #'     
-      #'     box(
-      #'       title = "Wastewater Systems in the Region",
-      #'       solidHeader = TRUE,
-      #'       collapsible = TRUE,
-      #'       width = 6,
-      #'       leafletOutput("EffluentMapPlot", height = 500)
-      #'     ),
-      #'     
-      #'     box(
-      #'       title = "References",
-      #'       solidHeader = TRUE,
-      #'       collapsible = TRUE,
-      #'       width = 12,
-      #'       p("Data source: Government of Canada, Environment and Climate Change Canada, 
-      #'         Wastewater Systems Effluent Regulations Reported Data Resaeu-Wser-identification. https://catalogue.ec.gc.ca/geonetwork/srv/eng/catalog.search#/metadata/7464033d-04b7-4ce3-b8d5-dd8786e06462"),
-      #'       p("Data source: Government of Canada, Environment and Climate Change Canada, 
-      #'         Wastewater Systems Effluent Regulations Reported Data Resaeu-Wser-surveillance-monitoring. https://catalogue.ec.gc.ca/geonetwork/srv/eng/catalog.search#/metadata/7464033d-04b7-4ce3-b8d5-dd8786e06462")
-      #'     )
-      #'   )
-      #' )
+      )
     ),
     footer_TOTA
   )
