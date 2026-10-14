@@ -385,7 +385,7 @@ server <- function(input, output, session) {
   })
   
   #Store selected basin ---------------------------------------------------------------------------------------------
-  selectedBasin <- reactiveValues(Basin = "All Basins")
+  selectedBasin <- reactiveValues(Basin = "All Regions")
   
   #MAP OF DRAINAGE REGIONS WITH VOLUME POP UP -----------------------------------------------------------------------
   output$VolumeMapPlot<- renderLeaflet({
@@ -535,7 +535,7 @@ server <- function(input, output, session) {
     req(selectedBasin$Basin)
     req(input$year)
     
-    if (selectedBasin$Basin == "All Basins") {
+    if (selectedBasin$Basin == "All Regions") {
       df_basin_vol_TO %>%
         filter(REF_DATE == input$year, Month != "Total volume, all months") %>%
         group_by(Month) %>%
@@ -556,7 +556,7 @@ server <- function(input, output, session) {
     
     req(nrow(df) > 0)
     
-    if(selectedBasin$Basin == "All Basins"){
+    if(selectedBasin$Basin == "All Regions"){
       plot <- ggplot(df, 
                      aes(x = match(Month, month.name), 
                          y = VALUE,
@@ -662,7 +662,7 @@ server <- function(input, output, session) {
     req(selectedBasin$Basin)
     req(input$year)
     
-    if (selectedBasin$Basin == "All Basins") {
+    if (selectedBasin$Basin == "All Regions") {
       df_basin_vol_TO %>%
         filter(Month == "Total volume, all months") %>%
         group_by(REF_DATE) %>%
@@ -683,7 +683,7 @@ server <- function(input, output, session) {
     
     req(nrow(df) > 0)
     
-    if(selectedBasin$Basin == "All Basins"){
+    if(selectedBasin$Basin == "All Regions"){
       plot <- ggplot(df, 
                      aes(x = REF_DATE, 
                          y = VALUE,

@@ -256,7 +256,7 @@ ui <- dashboardPage(
           )),
           
           box(
-            title = "Effluent - How much effluent is being desposited in the region?",
+            title = "Effluent - How much effluent is being deposited in the region?",
             solidHeader = TRUE,
             width = 12,
             p("This dashboard explores the volume of effluent discharged across the Thompson Okanagan Tourism Region. 
