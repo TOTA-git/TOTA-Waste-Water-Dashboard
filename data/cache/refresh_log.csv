@@ -1,8 +1,8 @@
 dataset,timestamp,status,n_rows,message
-basin_volumes,2026-10-21 20:57:18,failure,NA,cannot open the connection
-stats_can_release_date,2026-10-21 20:57:19,failure,NA,Release date is NA. Keeping previous cache.
-population_served,2026-10-21 20:58:19,failure,NA,cannot open URL 'https://www150.statcan.gc.ca/n1/tbl/csv/38100119-eng.zip'
-population_release_date,2026-10-21 20:58:19,failure,NA,Release date is NA. Keeping previous cache.
-effluent_id,2026-10-21 20:58:20,success,18,NA
-effluent_monitoring,2026-10-21 20:58:24,success,72392,NA
-effluent_lastModified,2026-10-21 20:58:24,success,1,NA
+basin_volumes,2026-10-22 20:53:19,success,1092,NA
+stats_can_release_date,2026-10-22 20:53:21,success,1,NA
+population_served,2026-10-22 20:53:21,success,84,NA
+population_release_date,2026-10-22 20:53:24,success,1,NA
+effluent_id,2026-10-22 20:53:24,success,18,NA
+effluent_monitoring,2026-10-22 20:53:28,success,72392,NA
+effluent_lastModified,2026-10-22 20:54:28,failure,NA,cannot open the connection to 'https://open.canada.ca/data/api/action/package_show?id=9e11e114-ef0d-4814-8d93-24af23716489'
