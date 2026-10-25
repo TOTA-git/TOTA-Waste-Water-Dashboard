@@ -1,8 +1,8 @@
 dataset,timestamp,status,n_rows,message
-basin_volumes,2026-10-24 19:53:24,success,1092,NA
-stats_can_release_date,2026-10-24 19:53:26,success,1,NA
-population_served,2026-10-24 19:53:26,success,84,NA
-population_release_date,2026-10-24 19:53:28,success,1,NA
-effluent_id,2026-10-24 19:53:29,success,18,NA
-effluent_monitoring,2026-10-24 19:53:32,success,72392,NA
-effluent_lastModified,2026-10-24 19:54:32,failure,NA,cannot open the connection to 'https://open.canada.ca/data/api/action/package_show?id=9e11e114-ef0d-4814-8d93-24af23716489'
+basin_volumes,2026-10-25 20:02:36,success,1092,NA
+stats_can_release_date,2026-10-25 20:02:38,success,1,NA
+population_served,2026-10-25 20:02:39,success,84,NA
+population_release_date,2026-10-25 20:02:41,success,1,NA
+effluent_id,2026-10-25 20:02:42,success,18,NA
+effluent_monitoring,2026-10-25 20:02:46,success,72392,NA
+effluent_lastModified,2026-10-25 20:02:47,success,1,NA
