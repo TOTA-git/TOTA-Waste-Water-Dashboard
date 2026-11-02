@@ -1030,7 +1030,7 @@ server <- function(input, output, session) {
         
         labs(
           x = "Year", 
-          y = "Volume"
+          y = "Population"
         ) +
         
         theme(legend.title = element_blank(),

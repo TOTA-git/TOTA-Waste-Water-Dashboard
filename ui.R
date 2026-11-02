@@ -105,7 +105,7 @@ ui <- dashboardPage(
       id = "tabs",
       menuItem("Overview", tabName = "overview", icon = icon("readme")),
       menuItem("Effluent", tabName ="effluent", icon = icon("bridge-water")),
-      menuItem("Volume Processed", tabName = "volume", icon = icon("water")),
+      menuItem("Wastewater Volumes", tabName = "volume", icon = icon("water")),
       menuItem("Population Served", tabName = "population", icon = icon("people-group")),
       menuItem("Volume Per Person", tabName = "perPerson", icon = icon("person")),
       menuItem("Back to Hub", tabName = NULL, icon = icon("globe"), href = "https://tota-insto-hub.share.connect.posit.cloud/", newtab = FALSE)
