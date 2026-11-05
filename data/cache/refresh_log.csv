@@ -1,8 +1,8 @@
 dataset,timestamp,status,n_rows,message
-basin_volumes,2026-11-04 22:57:58,success,1092,NA
-stats_can_release_date,2026-11-04 22:58:00,success,1,NA
-population_served,2026-11-04 22:58:00,success,84,NA
-population_release_date,2026-11-04 22:58:01,success,1,NA
-effluent_id,2026-11-04 22:58:02,success,18,NA
-effluent_monitoring,2026-11-04 22:58:11,success,72392,NA
-effluent_lastModified,2026-11-04 22:58:12,success,1,NA
+basin_volumes,2026-11-05 22:57:49,success,1092,NA
+stats_can_release_date,2026-11-05 22:57:51,success,1,NA
+population_served,2026-11-05 22:57:51,success,84,NA
+population_release_date,2026-11-05 22:57:53,success,1,NA
+effluent_id,2026-11-05 22:57:55,success,18,NA
+effluent_monitoring,2026-11-05 22:58:05,success,72392,NA
+effluent_lastModified,2026-11-05 22:58:06,success,1,NA
