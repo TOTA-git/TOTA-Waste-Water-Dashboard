@@ -176,9 +176,11 @@ server <- function(input, output, session) {
         x = "Effluent Volume m³"
       ) +
       
+      theme_minimal() +
+      
       theme(
         axis.title = element_text(size = if (is_narrow) 12 else 16),
-        axis.text = element_text(size = if (is_narrow) 8 else 12)
+        axis.text = element_text(size = if (is_narrow) 8 else 14)
       )
     
     ggplotly(plot, tooltip = "text") %>%
@@ -241,6 +243,8 @@ server <- function(input, output, session) {
         x = "Year", 
         y = "Volume m³"
       ) +
+      
+      theme_minimal() +
       
       theme(legend.title = element_blank(),
             axis.title = element_text(size = if (is_narrow) 10 else 16),
@@ -508,6 +512,8 @@ server <- function(input, output, session) {
         y = NULL
       ) +
       
+      theme_minimal() +
+      
       theme(
         axis.title = element_text(size = if (is_narrow) 12 else 16),
         axis.text = element_text(size = if (is_narrow) 8 else 12)
@@ -585,6 +591,8 @@ server <- function(input, output, session) {
           y = "Volume m³"
         ) +
         
+        theme_minimal() +
+        
         theme(legend.title = element_blank(),
               axis.title = element_text(size = if (is_narrow) 10 else 16),
               axis.text = element_text(size = if (is_narrow) 8 else 12),
@@ -618,6 +626,8 @@ server <- function(input, output, session) {
           x = "Month", 
           y = "Volume m³"
         ) +
+        
+        theme_minimal() +
         
         theme(legend.title = element_blank(),
               axis.title = element_text(size = if (is_narrow) 10 else 16),
@@ -714,6 +724,8 @@ server <- function(input, output, session) {
           y = "Volume m³"
         ) +
         
+        theme_minimal() +
+        
         theme(legend.title = element_blank(),
               axis.title = element_text(size = if (is_narrow) 10 else 16),
               axis.text = element_text(size = if (is_narrow) 8 else 12),
@@ -749,6 +761,8 @@ server <- function(input, output, session) {
           x = "Year", 
           y = "Volume m³"
         ) +
+        
+        theme_minimal() +
         
         theme(legend.title = element_blank(),
               axis.title = element_text(size = if (is_narrow) 10 else 16),
@@ -957,6 +971,8 @@ server <- function(input, output, session) {
         y = NULL
       ) +
       
+      theme_minimal() +
+      
       theme(
         axis.title = element_text(size = if (is_narrow) 12 else 16),
         axis.text = element_text(size = if (is_narrow) 8 else 12)
@@ -1032,6 +1048,8 @@ server <- function(input, output, session) {
           x = "Year", 
           y = "Population"
         ) +
+      
+        theme_minimal() +
         
         theme(legend.title = element_blank(),
               axis.title = element_text(size = if (is_narrow) 10 else 16),
@@ -1184,6 +1202,8 @@ server <- function(input, output, session) {
         x = "Year", 
         y = "m³/person"
       ) +
+      
+      theme_minimal() +
       
       theme(legend.title = element_blank(),
             axis.title = element_text(size = if (is_narrow) 10 else 16),

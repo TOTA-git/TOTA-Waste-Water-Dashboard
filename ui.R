@@ -385,10 +385,10 @@ ui <- dashboardPage(
             subtitle = "Updated by Statistics Canada."
           ),
           
-          valueBoxOutput("TotalVolume", width = 3),
-          valueBoxOutput("TotalBCtoTO", width = 3),
-          valueBoxOutput("YoY", width = 3),
-          valueBoxOutput("VolumeChange", width = 3),
+          valueBoxOutput("TotalVolume", width = 4),
+          valueBoxOutput("TotalBCtoTO", width = 4),
+          valueBoxOutput("YoY", width = 4),
+          # valueBoxOutput("VolumeChange", width = 3),
           
           box(
             title = "Select a Drainage Region",
@@ -445,7 +445,7 @@ ui <- dashboardPage(
             p("This data focuses on population served by municipal wastewater systems within the Fraser Lower Mainland,
               Columbia, and Okanagan-Similkameen drainage regions. These drainage regions make up, and extend beyond, the boundaries of the 
               Thompson-Okanagan Tourism Region. As a result, the reported amount of people served are an overestimate for the tourism region, 
-              but they provide a useful indication of the population served across the broader area."),
+              but provides a useful indication of the population served across the broader area."),
             style = "font-size: 18px;"
           ),
           
@@ -476,10 +476,10 @@ ui <- dashboardPage(
             subtitle = "Updated by Statistics Canada."
           ),
           
-          valueBoxOutput("TotalPop", width = 3),
-          valueBoxOutput("PopBCtoTO", width = 3),
-          valueBoxOutput("YoYpop", width = 3),
-          valueBoxOutput("popChange", width = 3),
+          valueBoxOutput("TotalPop", width = 4),
+          valueBoxOutput("PopBCtoTO", width = 4),
+          valueBoxOutput("YoYpop", width = 4),
+          # valueBoxOutput("popChange", width = 3),
           
           box(
             title = "Population Served by Drainage Region",
@@ -551,10 +551,10 @@ ui <- dashboardPage(
             )
           ),
           
-          valueBoxOutput("PerCapitaYear", width = 3),
-          valueBoxOutput("PerCapitaDay", width = 3),
-          valueBoxOutput("YoYCapita", width = 3),
-          valueBoxOutput("ChangeOverYears", width = 3),
+          valueBoxOutput("PerCapitaYear", width = 4),
+          valueBoxOutput("PerCapitaDay", width = 4),
+          valueBoxOutput("YoYCapita", width = 4),
+          # valueBoxOutput("ChangeOverYears", width = 3),
           
           box(
             title = paste0("Volume Processed Per Person Served ", min(df_pop_vol_TO$REF_DATE), " - " , max(df_pop_vol_TO$REF_DATE)),
